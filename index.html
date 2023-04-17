@@ -12,8 +12,8 @@
 
 <body>
   <div id="map">
-    <div id="mapText">intro text here</div>
-    <svg id="map" height="500" width="500"></svg>
+    <div id="mapText">intro text here with description/overview .... im just putting placeholder text for now </div>
+    <svg id="map" height="900" width="900"></svg>
 
   </div>
   
@@ -26,10 +26,13 @@
       const combinedData = await d3.csv("results_dataset.csv", d3.autoType);
       console.log(combinedData);
 
-      // const atlasData = await d3.json("countries-50m.json");
       const atlasData = await d3.json("world-countries.json");
       console.log(atlasData);
-      // console.log(atlasData);
+
+      // This CSV has all the data from every previous circuit, some of which are not currently active but all should have data from the past
+      const circuits = await d3.csv("data/circuits.csv", d3.autoType);
+      console.log(circuits);
+
 
       const mapHeight = map.attr("height");
       const mapWidth = map.attr("width");
@@ -46,10 +49,42 @@
               .join("path")
               .attr("class", "country")
               .style("fill", "none")
-              .style("stroke", "black")
-              .style("stroke-width", "1px")
+              .style("stroke", "white")
+              .style("stroke-width", ".5px")
               .attr("d", path);
 
+      var zoom = d3.zoom()
+                   .scaleExtent([1, 10])
+                   .on("zoom", zoomTransform);
+
+
+     function zoomTransform({transform}) {
+       viewport.attr("transform", transform.toString());
+     };
+     map.call(zoom);
+
+     let circuitDots = viewport.selectAll("circle.circuit")
+                               .data(circuits)
+                               .join("circle")
+                               .attr("class", "circuit")
+                               .attr("cx", d => projection([d.lng, d.lat])[0] )
+                               .attr("cy", d => projection([d.lng, d.lat])[1] )
+                               .attr("r", "3px")
+                               .style("fill", "red")
+                               .on("click", function (event, d) {
+                                console.log(d.name);
+                               })
+                               .on("mouseover", function (event, d) {
+                                d3.select(this)
+                                .style("stroke", "white")
+                                .style("stroke-width", "1px")
+                               })
+                               .on("mouseout", function (event, d) {
+                                d3.select(this)
+                                .style("stroke", "none")
+                                .style("stroke-width", "0px")
+                               });
+                                      
 
     }
     requestData();

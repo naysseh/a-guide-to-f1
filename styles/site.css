@@ -1,0 +1,15 @@
+html {
+  background-color: black;
+  color: white;
+}
+
+
+div#map {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#mapText {
+  width: 400px;
+}
