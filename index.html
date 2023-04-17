@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>A Guide To F1</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="styles/site.css">
+</head>
+
+
+<body>
+  <div id="map">
+    <div id="mapText">intro text here</div>
+    <svg id="map" height="500" width="500"></svg>
+
+  </div>
+  
+
+  <script>
+    const map = d3.select("svg#map");
+
+
+    const requestData = async function () {
+      const combinedData = await d3.csv("results_dataset.csv", d3.autoType);
+      console.log(combinedData);
+
+      // const atlasData = await d3.json("countries-50m.json");
+      const atlasData = await d3.json("world-countries.json");
+      console.log(atlasData);
+      // console.log(atlasData);
+
+      const mapHeight = map.attr("height");
+      const mapWidth = map.attr("width");
+
+      let viewport = map.append("g");
+      let countryMesh = topojson.mesh(atlasData, atlasData.objects.countries1);
+      let countries = topojson.feature(atlasData, atlasData.objects.countries1);
+
+      var projection = d3.geoMercator().fitSize([mapWidth, mapHeight], countries);
+      var path = d3.geoPath().projection(projection);
+
+      viewport.selectAll("path.country")
+              .data(countries.features)
+              .join("path")
+              .attr("class", "country")
+              .style("fill", "none")
+              .style("stroke", "black")
+              .style("stroke-width", "1px")
+              .attr("d", path);
+
+
+    }
+    requestData();
+  </script>
+
+</body>
+</html>
