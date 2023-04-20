@@ -13,3 +13,7 @@ div#map {
 #mapText {
   width: 400px;
 }
+
+.axis {
+  font-size: 15px;
+}

@@ -32,9 +32,11 @@
     const scatter = d3.select("svg#scatter");
     const scatterHeight = scatter.attr("height");
     const scatterWidth = scatter.attr("width");
-    const scatterMargins = {top: 10, right: 10, bottom: 20, left: 20};
+    const scatterMargins = {top: 15, right: 10, bottom: 20, left: 20};
     let scatterArea = scatter.append("g")
-                             .attr('transform',`translate(${scatterMargins.left},${scatterMargins.top})`);
+                             .attr('transform',`translate(${scatterMargins.left},${0})`);
+    let scatterHeightA = scatterHeight - scatterMargins.top - scatterMargins.bottom;
+    let scatterWidthA = scatterWidth - scatterMargins.left - scatterMargins.right;
 
   /*
     The data files setup (by Natasha) <3 (i figured id put this here so we can go back to it while we work if needed)
@@ -45,25 +47,23 @@
 
     first_place_instances.csv: Is the same as the above one but only has a result if the result was first place (I made this specifically for the scatterplot)
 
-    driver_year_counts.csv: counts the total # of years a driver has been driving in f1
+    wins_and_years.csv: total years driven and total wins for a driver
   */  
 
                              
     const requestData = async function () {
       const combinedData = await d3.csv("results_dataset.csv", d3.autoType);
-      console.log(combinedData);
+      console.log("all data", combinedData);
 
       const atlasData = await d3.json("world-countries.json");
       console.log(atlasData);
 
-      // const driverData = await d3.csv("driver_points_by_race.csv");
-      // console.log('driverData', driverData);
+      const winsYears = await d3.csv("wins_and_years.csv", d3.autoType);
+      console.log("win and years", winsYears);
 
-      // This CSV has all the data from every previous circuit, some of which are not currently active but all should have data from the past
+      // This CSV has all the info about every previous circuit, some of which are not currently active but all should have data from the past [this is literally just the list of circuits, not connected w anything else]
       const circuits = await d3.csv("data/circuits.csv", d3.autoType);
-      console.log(circuits);
-
-
+      console.log("circuits", circuits);
 
       let viewport = map.append("g");
       let countryMesh = topojson.mesh(atlasData, atlasData.objects.countries1);
@@ -114,12 +114,47 @@
                                 .style("stroke-width", "0px")
                                });
      
-    
-
-
       // final chart - scatterplot
+      const yearExtent = d3.extent(winsYears, d => d.years); // 1 to 19
+      const winExtent = d3.extent(winsYears, d => d.wins); // 1 to 103 (some drivers have 0 but they wont be included here)
 
-    }
+      //scales
+      const yearScale = d3.scaleLinear()
+                          .domain(yearExtent)
+                          .range([0, scatterWidthA]);
+      const winScale = d3.scaleLinear()
+                         .domain(winExtent)
+                         .range([scatterHeightA-scatterMargins.top-4, 0]);               
+      
+      let leftAxis = d3.axisLeft(winScale);    
+      scatterArea.append("g")
+                 .attr("class", "y-axis axis")
+                 .attr('transform',`translate(${scatterMargins.left},${0})`) 
+                 .attr("stroke", "white")
+                 .call(leftAxis);
+
+      let bottomAxis = d3.axisBottom(yearScale);
+      scatterArea.append("g")
+                 .attr("class", "x-axis axis")
+                 .attr('transform',`translate(${scatterMargins.left},${scatterHeightA-scatterMargins.top})`) 
+                 .attr("stroke", "white")
+                 .call(bottomAxis);
+
+      let driverWins = scatterArea.selectAll("circle.scatter")
+                      .data(winsYears)
+                      .join("circle")
+                      .attr("class", "scatter")
+                      .attr("cx", d => yearScale(d.years) + scatterMargins.left)
+                      .attr("cy", d => winScale(d.wins))
+                      .attr("index", d => d.driverRef)
+                      .attr("r", "4px")
+                      .on("mouseover", function (event, d) {
+                        console.log(d.driverRef);
+                      })
+                      .style("fill", "red"); 
+
+
+    };
     requestData();
   </script>
 
