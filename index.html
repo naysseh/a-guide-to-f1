@@ -14,14 +14,41 @@
   <div id="map">
     <div id="mapText">intro text here with description/overview .... im just putting placeholder text for now </div>
     <svg id="map" height="900" width="900"></svg>
-
   </div>
+  <svg id="barChart" height="500" width="900"></svg>
+  <svg id="lineChart" height="500" width="900"></svg>
+  <svg id="scatter" height="500" width="900"></svg>
   
 
   <script>
     const map = d3.select("svg#map");
+    const mapHeight = map.attr("height");
+    const mapWidth = map.attr("width");
 
+    const barChart = d3.select("svg#barChart");
 
+    const lineChart = d3.select("svg#lineChart");
+
+    const scatter = d3.select("svg#scatter");
+    const scatterHeight = scatter.attr("height");
+    const scatterWidth = scatter.attr("width");
+    const scatterMargins = {top: 10, right: 10, bottom: 20, left: 20};
+    let scatterArea = scatter.append("g")
+                             .attr('transform',`translate(${scatterMargins.left},${scatterMargins.top})`);
+
+  /*
+    The data files setup (by Natasha) <3 (i figured id put this here so we can go back to it while we work if needed)
+
+    The ones inside the /data folder are all the original, unchanged files. In jupyter though I made some new ones which are in the root directory:
+
+    results_dataset.csv: This is a merge on the initial results csv (it's best to look at it) which has results for lap times, final position, etc., for every race result in the past. The nice part about this set is that it contains the driver values separate from the teams (because many drivers drive for more than 1 team during their lifetime). basically everything is in here you just might have to map/loop on it
+
+    first_place_instances.csv: Is the same as the above one but only has a result if the result was first place (I made this specifically for the scatterplot)
+
+    driver_year_counts.csv: counts the total # of years a driver has been driving in f1
+  */  
+
+                             
     const requestData = async function () {
       const combinedData = await d3.csv("results_dataset.csv", d3.autoType);
       console.log(combinedData);
@@ -29,13 +56,14 @@
       const atlasData = await d3.json("world-countries.json");
       console.log(atlasData);
 
+      // const driverData = await d3.csv("driver_points_by_race.csv");
+      // console.log('driverData', driverData);
+
       // This CSV has all the data from every previous circuit, some of which are not currently active but all should have data from the past
       const circuits = await d3.csv("data/circuits.csv", d3.autoType);
       console.log(circuits);
 
 
-      const mapHeight = map.attr("height");
-      const mapWidth = map.attr("width");
 
       let viewport = map.append("g");
       let countryMesh = topojson.mesh(atlasData, atlasData.objects.countries1);
@@ -62,6 +90,7 @@
        viewport.attr("transform", transform.toString());
      };
      map.call(zoom);
+     zoom.scaleTo(map, 1.4); //i set an inital zoom value for it to load on but feel free to change
 
      let circuitDots = viewport.selectAll("circle.circuit")
                                .data(circuits)
@@ -84,7 +113,11 @@
                                 .style("stroke", "none")
                                 .style("stroke-width", "0px")
                                });
-                                      
+     
+    
+
+
+      // final chart - scatterplot
 
     }
     requestData();
