@@ -52,6 +52,15 @@
     const barChart = d3.select("svg#barChart");
 
     const lineChart = d3.select("svg#lineChart");
+    const lineHeight = lineChart.attr("height");
+    const lineWidth = lineChart.attr("width");
+    const lineMargins = {top: 10, right: 20, bottom: 30, left: 50};
+    const lineGraphHeight = lineHeight - lineMargins.top - lineMargins.bottom
+    const lineGraphWidth = lineWidth - lineMargins.right - lineMargins.left
+    let lineAnnotations = lineChart.append("g").attr("id","line-annotations");
+    let lineChartArea = lineChart.append("g")
+                  .attr("transform","translate("+lineMargins.left+","+lineMargins.top+")")
+                  .attr("class", "lineChartBackground");
 
     const scatter = d3.select("svg#scatter");
     const scatterHeight = scatter.attr("height");
@@ -137,7 +146,79 @@
      map.call(zoom);
      zoom.scaleTo(map, 1.4); //i set an inital zoom value for it to load on but feel free to change
 
-     function lapTimeLine(circuitData){
+     function generateLineChart(dictYearLapTime){
+      console.log(dictYearLapTime)
+      dataDict = []
+      const toMilli = (min,sec) => (min * 60 + sec) * 1000;
+
+      Object.keys(dictYearLapTime).forEach(function(key, index) {
+        newKey = Number(key)
+        val = dictYearLapTime[key];
+        splited = val.split(":")
+        dataDict[newKey] = toMilli(Number(splited[0]), Number(splited[1]))
+      });
+
+      var keys = Object.keys(dataDict);
+      var values = []
+      keys.forEach((key)=>{
+          values.push(dataDict[key]);
+      });
+
+      let yearsExtent = d3.extent(keys)
+      let timeExtent = d3.extent(values)
+
+      let xScale = d3.scaleLinear().domain([yearsExtent[0], Number(yearsExtent[1])+1]).range([0, lineGraphWidth]);
+      let yScale = d3.scaleLinear().domain([timeExtent[0], timeExtent[1] + 1000]).range([lineGraphHeight, 0]); 
+
+      let leftAxis = d3.axisLeft(yScale)
+                        .tickFormat("");
+      let leftGridlines= d3.axisLeft(yScale)
+                          .tickSize(-lineGraphWidth-10)
+                          .tickFormat(function(d) {
+                                return d3.timeFormat('%M min %S sec')(d)
+                            })
+
+      lineChartArea.append("g")
+          .attr("class", "y axis")
+          .attr("transform",`translate(${lineMargins.left},${lineMargins.top})`)
+          .call(leftAxis)
+
+      lineChartArea.append("g")
+          .attr("class", "y gridlines")
+          .attr("transform",`translate(${lineMargins.left},${lineMargins.top})`)
+          .call(leftGridlines);
+
+    
+      let bottomAxis = d3.axisBottom(xScale)
+                          .tickFormat('');
+      let bottomGridlines = d3.axisBottom(xScale)
+                            .tickSize(-lineGraphHeight)
+                            .tickFormat(d3.format("d"))
+
+      lineChartArea.append("g")
+              .attr('class', 'x gridlines') 
+              .attr('transform',`translate(${lineMargins.left},${lineGraphHeight+lineMargins.top})`)
+              .call(bottomAxis);
+      lineChartArea.append("g")
+              .attr('class', 'x gridlines') 
+              .attr('transform',`translate(${lineMargins.left},${lineGraphHeight+lineMargins.top})`)
+              .call(bottomGridlines);
+
+      var lineGen = d3.line()
+              .x( d => xScale(Number(d)) + 50 )
+              .y( d => yScale(Number(dataDict[d]) ))
+              .curve(d3.curveMonotoneX);  
+
+      lineChartArea.append("path")
+              .datum(Object.keys(dataDict))
+              .attr("class", "line")
+              .attr("fill", "none")
+              .attr("stroke", "red")
+              .attr("stroke-width", 3)
+              .attr("d", lineGen);
+     }
+
+    function lapTimeLine(circuitData){
       console.log(circuitData);
       cId = circuitData.circuitId
       cName = circuitData.name
@@ -147,17 +228,14 @@
       raceList.forEach(rId=> {
         const isRidPresent = fastestLaps.find ((x) => x.raceId == rId)
         if (isRidPresent) {
-          console.log(isRidPresent)
           lt = isRidPresent.fastestLapTime
           year = (races.find ((x) => x.raceId == rId)).year
           raceLapTimes[year] = lt
         }
-        console.log(raceLapTimes)
-
-        // generateLineChart(year, lt)
-
       })
-      fastestLaps
+      if (raceLapTimes.length > 0){
+          generateLineChart(raceLapTimes)
+        }
      }
 
      let circuitDots = viewport.selectAll("circle.circuit")
@@ -168,9 +246,6 @@
                                .attr("cy", d => projection([d.lng, d.lat])[1] )
                                .attr("r", "3px")
                                .style("fill", "red")
-                               .on("click", function (event, d) {
-                                lapTimeLine(d)
-                               })
                                .on("mouseover", function (event, d) {
                                   d3.select(this)
                                     .style("stroke", "white")
@@ -184,6 +259,7 @@
                                .on("click", function (event, d) {
                                   d3.select(this);
                                   // console.log(this);
+                                  lapTimeLine(d)
                                   populateCircuitNote(d);
                                });
 
