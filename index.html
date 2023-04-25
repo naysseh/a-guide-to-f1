@@ -11,13 +11,27 @@
 
 
 <body>
+  <h1>A Guide to F1</h1>
   <div id="map">
-    <div id="mapText">intro text here with description/overview .... im just putting placeholder text for now </div>
+    <div id="mapAnnotations">
+      <div id="mapText">What is F1? The fast paced motorsport, <strong>Formula 1</strong>, has been around since 1950. With historical top speeds of around 180 mph in 1950, and current top speeds at around 220 mph, the F1 car is not your average roadster. Cheetahs can run at up to 80 mph; the average car can likely hit 120. F1 cars are the fastest in the world, making the sport high energy, fast paced, and dangerous. 
+      </div>
+      <div id="mapPopup">placeholder for circuit info popup</div>
+      <button>Scroll down button</button>
+    </div>
+
     <svg id="map" height="900" width="900"></svg>
   </div>
   <svg id="barChart" height="500" width="900"></svg>
   <svg id="lineChart" height="500" width="900"></svg>
-  <svg id="scatter" height="500" width="900"></svg>
+  <div id="scatterArea">
+    <div id="scatterAnnotations">
+      <div id="scatterText">Does length of career correlate with success in F1? Yes, but not necessarily. A few notable drivers such as Lewis Hamilton, Alain Prost, and Ayrton Senna have scored big in their careers, despite none of them having been driving the longest. </div>
+
+      <div id="driverYearStats">placeholder for popup for driver stats on point rollover/click</div>
+    </div>
+    <svg id="scatter" height="500" width="900"></svg>
+  </div>
   
 
   <script>
@@ -32,7 +46,7 @@
     const scatter = d3.select("svg#scatter");
     const scatterHeight = scatter.attr("height");
     const scatterWidth = scatter.attr("width");
-    const scatterMargins = {top: 15, right: 10, bottom: 20, left: 20};
+    const scatterMargins = {top: 15, right: 10, bottom: 20, left: 25};
     let scatterArea = scatter.append("g")
                              .attr('transform',`translate(${scatterMargins.left},${0})`);
     let scatterHeightA = scatterHeight - scatterMargins.top - scatterMargins.bottom;
@@ -180,10 +194,23 @@
       let bottomAxis = d3.axisBottom(yearScale);
       scatterArea.append("g")
                  .attr("class", "x-axis axis")
-                 .attr('transform',`translate(${scatterMargins.left},${scatterHeightA-scatterMargins.top})`) 
+                 .attr('transform',`translate(${scatterMargins.left},${scatterHeightA - scatterMargins.top})`) 
                  .attr("stroke", "white")
                  .call(bottomAxis);
+      //axis label - bottom
+      scatterArea.append("text")
+                 .text("Years Driven")
+                 .attr("class", "axis-label")
+                 .attr('transform', `translate(${scatterWidthA / 2},${scatterHeightA + 20})`)
+                 .style("fill", "white");
 
+      //axis label - left 
+      scatterArea.append("text")
+                 .text("Total Wins")
+                 .attr("class", "axis-label")
+                 .attr('transform', `translate(${scatterMargins.left / 2 - 20}, ${scatterHeightA/2 + 30}) rotate(-90)`)
+                 .style("fill", "white");
+                  
       let driverWins = scatterArea.selectAll("circle.scatter")
                       .data(winsYears)
                       .join("circle")
@@ -196,6 +223,7 @@
                         console.log(d.driverRef);
                       })
                       .style("fill", "red"); 
+
 
 
     };

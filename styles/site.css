@@ -1,19 +1,58 @@
 html {
   background-color: black;
   color: white;
-}
+  font-family: Helvetica, sans-serif;
 
+}
 
 div#map {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-left: 20px;
 }
+
+div#scatterArea {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#scatterText {
+  width: 390px;
+}
+
+#scatterAnnotations {
+ /*  */
+}
+
+#mapAnnotations {
+  /*  */
+}
+
+#mapPopup {
+  border: 2px solid white;
+  margin-top: 20px;
+  height: 100px;
+}
+
+#driverYearStats {
+  border: 2px solid white;
+  margin-top: 20px;
+  height: 100px;
+}
+
 
 #mapText {
   width: 400px;
+  font-size: 20px;
 }
 
 .axis {
   font-size: 15px;
+}
+
+.axis-label {
+  font-family: Helvetica, sans-serif;
 }
