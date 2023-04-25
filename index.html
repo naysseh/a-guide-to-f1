@@ -15,8 +15,16 @@
   <div id="map">
     <div id="mapAnnotations">
       <div id="mapText">What is F1? The fast paced motorsport, <strong>Formula 1</strong>, has been around since 1950. With historical top speeds of around 180 mph in 1950, and current top speeds at around 220 mph, the F1 car is not your average roadster. Cheetahs can run at up to 80 mph; the average car can likely hit 120. F1 cars are the fastest in the world, making the sport high energy, fast paced, and dangerous. 
+
+      <br><br>
+      Click on a point to view information about that circuit.
       </div>
-      <div id="mapPopup">placeholder for circuit info popup</div>
+      <div id="mapPopup">
+        <h3 id="circuitTitle">CIRCUIT INFO:</h3>
+        <text id="circuitName"></text>
+        <br>
+        <text id="circuitLocation"></text>
+      </div>
       <button>Scroll down button</button>
     </div>
 
@@ -38,6 +46,8 @@
     const map = d3.select("svg#map");
     const mapHeight = map.attr("height");
     const mapWidth = map.attr("width");
+    let circuitName = d3.select("text#circuitName");
+    let circuitLocation = d3.select("text#circuitLocation");
 
     const barChart = d3.select("svg#barChart");
 
@@ -162,16 +172,25 @@
                                 lapTimeLine(d)
                                })
                                .on("mouseover", function (event, d) {
-                                d3.select(this)
-                                .style("stroke", "white")
-                                .style("stroke-width", "1px")
+                                  d3.select(this)
+                                    .style("stroke", "white")
+                                    .style("stroke-width", "1px")
                                })
                                .on("mouseout", function (event, d) {
-                                d3.select(this)
-                                .style("stroke", "none")
-                                .style("stroke-width", "0px")
+                                  d3.select(this)
+                                    .style("stroke", "none")
+                                    .style("stroke-width", "0px")
+                               })
+                               .on("click", function (event, d) {
+                                  d3.select(this);
+                                  // console.log(this);
+                                  populateCircuitNote(d);
                                });
-     
+
+      function populateCircuitNote (circuitObject) {
+        document.getElementById("circuitName").textContent = `${circuitObject.name}`;
+        document.getElementById("circuitLocation").textContent = `${circuitObject.location}, ${circuitObject.country}`;
+      }
       // final chart - scatterplot
       const yearExtent = d3.extent(winsYears, d => d.years); // 1 to 19
       const winExtent = d3.extent(winsYears, d => d.wins); // 1 to 103 (some drivers have 0 but they wont be included here)
