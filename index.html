@@ -119,6 +119,21 @@
       cName = circuitData.name
       raceList = racesNcircuits[cId]
       console.log(raceList)
+      raceLapTimes = []
+      raceList.forEach(rId=> {
+        const isRidPresent = fastestLaps.find ((x) => x.raceId == rId)
+        if (isRidPresent) {
+          console.log(isRidPresent)
+          lt = isRidPresent.fastestLapTime
+          year = (races.find ((x) => x.raceId == rId)).year
+          raceLapTimes[year] = lt
+        }
+        console.log(raceLapTimes)
+
+        // generateLineChart(year, lt)
+
+      })
+      fastestLaps
      }
 
      let circuitDots = viewport.selectAll("circle.circuit")
