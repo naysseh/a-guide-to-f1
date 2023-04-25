@@ -65,6 +65,27 @@
       const circuits = await d3.csv("data/circuits.csv", d3.autoType);
       console.log("circuits", circuits);
 
+      // This CSV has all the info about every previous circuit, some of which are not currently active but all should have data from the past [this is literally just the list of circuits, not connected w anything else]
+      const races = await d3.csv("data/races.csv", d3.autoType);
+      console.log("races", races);
+
+      const fastestLaps = await d3.csv("races_fastest_times.csv", d3.autoType);
+      console.log("fastest laps in race", fastestLaps);
+
+      racesNcircuits = {}
+      races.forEach(d => {
+        cId = d.circuitId
+        rId = d.raceId
+        if (!(cId in racesNcircuits)){
+          racesNcircuits[cId] = [rId]
+        }else if (cId in racesNcircuits){
+          raceList = racesNcircuits[cId]
+          raceList.indexOf(rId) === -1 ? raceList.push(rId) : console.log("This item already exists");
+          racesNcircuits[cId] = raceList
+        }
+      })
+      console.log(racesNcircuits)
+
       let viewport = map.append("g");
       let countryMesh = topojson.mesh(atlasData, atlasData.objects.countries1);
       let countries = topojson.feature(atlasData, atlasData.objects.countries1);
@@ -92,6 +113,14 @@
      map.call(zoom);
      zoom.scaleTo(map, 1.4); //i set an inital zoom value for it to load on but feel free to change
 
+     function lapTimeLine(circuitData){
+      console.log(circuitData);
+      cId = circuitData.circuitId
+      cName = circuitData.name
+      raceList = racesNcircuits[cId]
+      console.log(raceList)
+     }
+
      let circuitDots = viewport.selectAll("circle.circuit")
                                .data(circuits)
                                .join("circle")
@@ -101,7 +130,7 @@
                                .attr("r", "3px")
                                .style("fill", "red")
                                .on("click", function (event, d) {
-                                console.log(d.name);
+                                lapTimeLine(d)
                                })
                                .on("mouseover", function (event, d) {
                                 d3.select(this)
