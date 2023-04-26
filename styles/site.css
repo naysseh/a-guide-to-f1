@@ -21,6 +21,7 @@ div#scatterArea {
 
 #scatterText {
   width: 390px;
+  font-size: 20px;
 }
 
 #scatterAnnotations {
@@ -44,7 +45,7 @@ div#scatterArea {
   height: 100px;
 }
 
-h3#circuitTitle {
+h3.popupTitle {
   margin-top: 3px;
   margin-bottom: 3px;
 }
@@ -61,4 +62,16 @@ h3#circuitTitle {
 
 .axis-label {
   font-family: Helvetica, sans-serif;
+}
+
+div#lineChartArea {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+div#lineText {
+  width: 400px;
+  font-size: 20px;
 }
