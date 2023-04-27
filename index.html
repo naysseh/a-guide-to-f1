@@ -15,10 +15,13 @@
   <h1>A Guide to F1</h1>
   <div id="map">
     <div id="mapAnnotations">
-      <div id="mapText">What is F1? The fast paced motorsport, <strong>Formula 1</strong>, has been around since 1950. With historical top speeds of around 180 mph in 1950, and current top speeds at around 220 mph, the F1 car is not your average roadster. Cheetahs can run at up to 80 mph; the average car can likely hit 120. F1 cars are the fastest in the world, making the sport high energy, fast paced, and dangerous. 
+      <div id="mapText">What is F1? The fast paced motorsport, <strong>Formula 1</strong>, has been around since 1950.
+        With historical top speeds of around 180 mph in 1950, and current top speeds at around 220 mph, the F1 car is
+        not your average roadster. Cheetahs can run at up to 80 mph; the average car can likely hit 120. F1 cars are the
+        fastest in the world, making the sport high energy, fast paced, and dangerous.
 
-      <br><br>
-      Click on a point to view information about that circuit.
+        <br><br>
+        Click on a point to view information about that circuit.
       </div>
       <div id="mapPopup">
         <h3 class="popupTitle">CIRCUIT INFO:</h3>
@@ -31,14 +34,23 @@
 
     <svg id="map" height="900" width="900"></svg>
   </div>
-  <svg id="barChart" height="500" width="900"></svg>
+  <div class="bar-chart-area">
+    <div class="bar-desc">Who's been winning the <span id="circuitBlank">_____</span> race?</div>
+    <svg id="barChart" height="500" width="800"></svg>
+  </div>
+
   <div id="lineChartArea">
-    <div id="lineText">How have lap times changed per race? Check out previous stats from the <text id="lineBlank">_____</text> race. Click on a circuit on the map to view times. <br><br> Here, we see the fastest lap times from that race for a certain year. Lap times are affected by a number of factors: tire type, fuel level, overall car build, track temperature, weather conditions, and other factors.</div>
+    <div id="lineText">How have lap times changed per race? Check out previous stats from the <text
+        id="lineBlank">_____</text> race. Click on a circuit on the map to view times. <br><br> Here, we see the fastest
+      lap times from that race for a certain year. Lap times are affected by a number of factors: tire type, fuel level,
+      overall car build, track temperature, weather conditions, and other factors.</div>
     <svg id="lineChart" height="500" width="900"></svg>
   </div>
   <div id="scatterArea">
     <div id="scatterAnnotations">
-      <div id="scatterText">Does length of career correlate with success in F1? Yes, but not necessarily. A few notable drivers such as Lewis Hamilton, Alain Prost, and Ayrton Senna have scored big in their careers, despite none of them having been driving the longest. </div>
+      <div id="scatterText">Does length of career correlate with success in F1? Yes, but not necessarily. A few notable
+        drivers such as Lewis Hamilton, Alain Prost, and Ayrton Senna have scored big in their careers, despite none of
+        them having been driving the longest. </div>
 
       <div id="driverYearStats">
         <h3 class="popupTitle">DRIVER INFO:</h3>
@@ -54,7 +66,7 @@
     </div>
     <svg id="scatter" height="500" width="900"></svg>
   </div>
-  
+
 
   <script>
     const map = d3.select("svg#map");
@@ -64,40 +76,49 @@
     let circuitLocation = d3.select("text#circuitLocation");
 
     const barChart = d3.select("svg#barChart");
+    const barHeight = barChart.attr("height");
+    const barWidth = barChart.attr("width");
+    const barMargins = { top: 10, right: 20, bottom: 30, left: 20 };
+    const barChartHeight = barHeight - barMargins.top - barMargins.bottom
+    const barChartWidth = barWidth - barMargins.right - barMargins.left
+    let barAnnotations = barChart.append("g").attr("id", "bar-annotations");
+    let barChartArea = barChart.append("g")
+      .attr("transform", "translate(" + barMargins.left + "," + barMargins.top + ")")
+      .attr("class", "barChartBackground");
 
     const lineChart = d3.select("svg#lineChart");
     const lineHeight = lineChart.attr("height");
     const lineWidth = lineChart.attr("width");
-    const lineMargins = {top: 10, right: 20, bottom: 30, left: 50};
+    const lineMargins = { top: 10, right: 20, bottom: 30, left: 50 };
     const lineGraphHeight = lineHeight - lineMargins.top - lineMargins.bottom
     const lineGraphWidth = lineWidth - lineMargins.right - lineMargins.left
-    let lineAnnotations = lineChart.append("g").attr("id","line-annotations");
+    let lineAnnotations = lineChart.append("g").attr("id", "line-annotations");
     let lineChartArea = lineChart.append("g")
-                  .attr("transform","translate("+lineMargins.left+","+lineMargins.top+")")
-                  .attr("class", "lineChartBackground");
+      .attr("transform", "translate(" + lineMargins.left + 50 + "," + lineMargins.top + ")")
+      .attr("class", "lineChartBackground");
 
     const scatter = d3.select("svg#scatter");
     const scatterHeight = scatter.attr("height");
     const scatterWidth = scatter.attr("width");
-    const scatterMargins = {top: 15, right: 10, bottom: 20, left: 25};
+    const scatterMargins = { top: 15, right: 10, bottom: 20, left: 25 };
     let scatterArea = scatter.append("g")
-                             .attr('transform',`translate(${scatterMargins.left},${0})`);
+      .attr('transform', `translate(${scatterMargins.left},${0})`);
     let scatterHeightA = scatterHeight - scatterMargins.top - scatterMargins.bottom;
     let scatterWidthA = scatterWidth - scatterMargins.left - scatterMargins.right;
 
-  /*
-    The data files setup (by Natasha) <3 (i figured id put this here so we can go back to it while we work if needed)
+    /*
+      The data files setup (by Natasha) <3 (i figured id put this here so we can go back to it while we work if needed)
+  
+      The ones inside the /data folder are all the original, unchanged files. In jupyter though I made some new ones which are in the root directory:
+  
+      results_dataset.csv: This is a merge on the initial results csv (it's best to look at it) which has results for lap times, final position, etc., for every race result in the past. The nice part about this set is that it contains the driver values separate from the teams (because many drivers drive for more than 1 team during their lifetime). basically everything is in here you just might have to map/loop on it
+  
+      first_place_instances.csv: Is the same as the above one but only has a result if the result was first place (I made this specifically for the scatterplot)
+  
+      wins_and_years.csv: total years driven and total wins for a driver
+    */
 
-    The ones inside the /data folder are all the original, unchanged files. In jupyter though I made some new ones which are in the root directory:
 
-    results_dataset.csv: This is a merge on the initial results csv (it's best to look at it) which has results for lap times, final position, etc., for every race result in the past. The nice part about this set is that it contains the driver values separate from the teams (because many drivers drive for more than 1 team during their lifetime). basically everything is in here you just might have to map/loop on it
-
-    first_place_instances.csv: Is the same as the above one but only has a result if the result was first place (I made this specifically for the scatterplot)
-
-    wins_and_years.csv: total years driven and total wins for a driver
-  */  
-
-                             
     const requestData = async function () {
       const combinedData = await d3.csv("results_dataset.csv", d3.autoType);
       console.log("all data", combinedData);
@@ -107,6 +128,9 @@
 
       const winsYears = await d3.csv("wins_and_years.csv", d3.autoType);
       console.log("win and years", winsYears);
+
+      const constructorData = await d3.csv("data/constructors.csv", d3.autoType);
+      console.log("constructors", constructorData);
 
       // This CSV has all the info about every previous circuit, some of which are not currently active but all should have data from the past [this is literally just the list of circuits, not connected w anything else]
       const circuits = await d3.csv("data/circuits.csv", d3.autoType);
@@ -123,9 +147,9 @@
       races.forEach(d => {
         cId = d.circuitId
         rId = d.raceId
-        if (!(cId in racesNcircuits)){
+        if (!(cId in racesNcircuits)) {
           racesNcircuits[cId] = [rId]
-        }else if (cId in racesNcircuits){
+        } else if (cId in racesNcircuits) {
           raceList = racesNcircuits[cId]
           raceList.indexOf(rId) === -1 ? raceList.push(rId) : console.log("This item already exists");
           racesNcircuits[cId] = raceList
@@ -141,211 +165,313 @@
       var path = d3.geoPath().projection(projection);
 
       viewport.selectAll("path.country")
-              .data(countries.features)
-              .join("path")
-              .attr("class", "country")
-              .style("fill", "none")
-              .style("stroke", "white")
-              .style("stroke-width", ".5px")
-              .attr("d", path);
+        .data(countries.features)
+        .join("path")
+        .attr("class", "country")
+        .style("fill", "none")
+        .style("stroke", "white")
+        .style("stroke-width", ".5px")
+        .attr("d", path);
 
       var zoom = d3.zoom()
-                   .scaleExtent([1, 10])
-                   .on("zoom", zoomTransform);
+        .scaleExtent([1, 10])
+        .on("zoom", zoomTransform);
 
 
-     function zoomTransform({transform}) {
-       viewport.attr("transform", transform.toString());
-     };
-     map.call(zoom);
-     zoom.scaleTo(map, 1.4); //i set an inital zoom value for it to load on but feel free to change
+      function zoomTransform({ transform }) {
+        viewport.attr("transform", transform.toString());
+      };
+      map.call(zoom);
+      zoom.scaleTo(map, 1.4); //i set an inital zoom value for it to load on but feel free to change
 
-     function generateLineChart(dictYearLapTime){
-      console.log(dictYearLapTime)
-      dataDict = []
-      const toMilli = (min,sec) => (min * 60 + sec) * 1000;
 
-      Object.keys(dictYearLapTime).forEach(function(key, index) {
-        newKey = Number(key)
-        val = dictYearLapTime[key];
-        splited = val.split(":")
-        dataDict[newKey] = toMilli(Number(splited[0]), Number(splited[1]))
-      });
+      function generateLineChart(dictYearLapTime) {
+        console.log(dictYearLapTime)
+        dataDict = []
+        const toMilli = (min, sec) => (min * 60 + sec) * 1000;
 
-      var keys = Object.keys(dataDict);
-      var values = []
-      keys.forEach((key)=>{
+        Object.keys(dictYearLapTime).forEach(function (key, index) {
+          newKey = Number(key)
+          val = dictYearLapTime[key];
+          splited = val.split(":")
+          dataDict[newKey] = toMilli(Number(splited[0]), Number(splited[1]))
+        });
+
+        var keys = Object.keys(dataDict);
+        var values = []
+        keys.forEach((key) => {
           values.push(dataDict[key]);
-      });
+        });
 
-      let yearsExtent = d3.extent(keys)
-      let timeExtent = d3.extent(values)
+        let yearsExtent = d3.extent(keys)
+        let timeExtent = d3.extent(values)
 
-      let xScale = d3.scaleLinear().domain([yearsExtent[0], Number(yearsExtent[1])+1]).range([0, lineGraphWidth]);
-      let yScale = d3.scaleLinear().domain([timeExtent[0], timeExtent[1] + 1000]).range([lineGraphHeight, 0]); 
+        let xScale = d3.scaleLinear().domain([yearsExtent[0], Number(yearsExtent[1]) + 1]).range([0, lineGraphWidth]);
+        let yScale = d3.scaleLinear().domain([timeExtent[0], timeExtent[1] + 1000]).range([lineGraphHeight, 0]);
 
-      let leftAxis = d3.axisLeft(yScale)
-                        .tickFormat("");
-      let leftGridlines= d3.axisLeft(yScale)
-                          .tickSize(-lineGraphWidth-10)
-                          .tickFormat(function(d) {
-                                return d3.timeFormat('%M min %S sec')(d)
-                            })
+        let leftAxis = d3.axisLeft(yScale)
+          .tickFormat("");
+        let leftGridlines = d3.axisLeft(yScale)
+          .tickSize(-lineGraphWidth - 10)
+          .tickFormat(function (d) {
+            return d3.timeFormat('%M min %S sec')(d)
+          })
 
-      lineChartArea.append("g")
+        lineChartArea.append("g")
           .attr("class", "y axis")
-          .attr("transform",`translate(${lineMargins.left},${lineMargins.top})`)
+          .attr("transform", `translate(${lineMargins.left},${lineMargins.top})`)
           .call(leftAxis)
 
-      lineChartArea.append("g")
+        lineChartArea.append("g")
           .attr("class", "y gridlines")
-          .attr("transform",`translate(${lineMargins.left},${lineMargins.top})`)
+          .attr("transform", `translate(${lineMargins.left},${lineMargins.top})`)
           .call(leftGridlines);
 
-    
-      let bottomAxis = d3.axisBottom(xScale)
-                          .tickFormat('');
-      let bottomGridlines = d3.axisBottom(xScale)
-                            .tickSize(-lineGraphHeight)
-                            .tickFormat(d3.format("d"))
 
-      lineChartArea.append("g")
-              .attr('class', 'x gridlines') 
-              .attr('transform',`translate(${lineMargins.left},${lineGraphHeight+lineMargins.top})`)
-              .call(bottomAxis);
-      lineChartArea.append("g")
-              .attr('class', 'x gridlines') 
-              .attr('transform',`translate(${lineMargins.left},${lineGraphHeight+lineMargins.top})`)
-              .call(bottomGridlines);
+        let bottomAxis = d3.axisBottom(xScale)
+          .tickFormat('');
+        let bottomGridlines = d3.axisBottom(xScale)
+          .tickSize(-lineGraphHeight)
+          .tickFormat(d3.format("d"))
 
-      var lineGen = d3.line()
-              .x( d => xScale(Number(d)) + 50 )
-              .y( d => yScale(Number(dataDict[d]) ))
-              .curve(d3.curveMonotoneX);  
+        lineChartArea.append("g")
+          .attr('class', 'x gridlines')
+          .attr('transform', `translate(${lineMargins.left},${lineGraphHeight + lineMargins.top})`)
+          .call(bottomAxis);
+        lineChartArea.append("g")
+          .attr('class', 'x gridlines')
+          .attr('transform', `translate(${lineMargins.left},${lineGraphHeight + lineMargins.top})`)
+          .call(bottomGridlines);
 
-      lineChartArea.append("path")
-              .datum(Object.keys(dataDict))
-              .attr("class", "line")
-              .attr("fill", "none")
-              .attr("stroke", "red")
-              .attr("stroke-width", 3)
-              .attr("d", lineGen);
-     }
+        var lineGen = d3.line()
+          .x(d => xScale(Number(d)) + 50)
+          .y(d => yScale(Number(dataDict[d])))
+          .curve(d3.curveMonotoneX);
 
-    function lapTimeLine(circuitData){
-      console.log(circuitData);
-      cId = circuitData.circuitId
-      cName = circuitData.name
-      raceList = racesNcircuits[cId]
-      console.log(raceList)
-      raceLapTimes = []
-      raceList.forEach(rId=> {
-        const isRidPresent = fastestLaps.find ((x) => x.raceId == rId)
-        if (isRidPresent) {
-          lt = isRidPresent.fastestLapTime
-          year = (races.find ((x) => x.raceId == rId)).year
-          raceLapTimes[year] = lt
-        }
-      })
-      if (raceLapTimes.length > 0){
+        lineChartArea.append("path")
+          .datum(Object.keys(dataDict))
+          .attr("class", "line")
+          .attr("fill", "none")
+          .attr("stroke", "red")
+          .attr("stroke-width", 3)
+          .attr("d", lineGen);
+      }
+
+      function lapTimeLine(circuitData) {
+        console.log(circuitData);
+        cId = circuitData.circuitId
+        cName = circuitData.name
+        raceList = racesNcircuits[cId]
+        console.log(raceList)
+        raceLapTimes = []
+        raceList.forEach(rId => {
+          const isRidPresent = fastestLaps.find((x) => x.raceId == rId)
+          if (isRidPresent) {
+            lt = isRidPresent.fastestLapTime
+            year = (races.find((x) => x.raceId == rId)).year
+            raceLapTimes[year] = lt
+          }
+        })
+        if (raceLapTimes.length > 0) {
           generateLineChart(raceLapTimes)
         }
-     }
+      }
 
-     let circuitDots = viewport.selectAll("circle.circuit")
-                               .data(circuits)
-                               .join("circle")
-                               .attr("class", "circuit")
-                               .attr("cx", d => projection([d.lng, d.lat])[0] )
-                               .attr("cy", d => projection([d.lng, d.lat])[1] )
-                               .attr("r", "3px")
-                               .style("fill", "red")
-                               .on("mouseover", function (event, d) {
-                                  d3.select(this)
-                                    .style("stroke", "white")
-                                    .style("stroke-width", "1px")
-                               })
-                               .on("mouseout", function (event, d) {
-                                  d3.select(this)
-                                    .style("stroke", "none")
-                                    .style("stroke-width", "0px")
-                               })
-                               .on("click", function (event, d) {
-                                  d3.select(this);
-                                  // console.log(this);
-                                  document.getElementById("lineBlank").textContent = `${d.name}`;
-                                  lapTimeLine(d)
-                                  populateCircuitNote(d);
-                               });
+      let circuitDots = viewport.selectAll("circle.circuit")
+        .data(circuits)
+        .join("circle")
+        .attr("class", "circuit")
+        .attr("cx", d => projection([d.lng, d.lat])[0])
+        .attr("cy", d => projection([d.lng, d.lat])[1])
+        .attr("r", "3px")
+        .style("fill", "red")
+        .on("mouseover", function (event, d) {
+          d3.select(this)
+            .style("stroke", "white")
+            .style("stroke-width", "1px")
+        })
+        .on("mouseout", function (event, d) {
+          d3.select(this)
+            .style("stroke", "none")
+            .style("stroke-width", "0px")
+        })
+        .on("click", function (event, d) {
+          d3.select(this);
+          // console.log(this);
+          document.getElementById("lineBlank").textContent = `${d.name}`;
+          lapTimeLine(d);
+          populateCircuitNote(d);
+          populateBarChartNote(d);
+          generateBarChart(d);
+        });
 
-      function populateCircuitNote (circuitObject) {
+      function populateCircuitNote(circuitObject) {
         document.getElementById("circuitName").textContent = `${circuitObject.name}`;
         document.getElementById("circuitLocation").textContent = `${circuitObject.location}, ${circuitObject.country}`;
       }
+
+      function populateBarChartNote(circuitObject) {
+        document.getElementById("circuitBlank").textContent = `${circuitObject.name}`;
+      }
+
+      // bar chart
+      circuitWins = {}
+      combinedData.forEach(d => {
+        raceId = d.raceId;
+        race = races[raceId];
+        circuitId = race.circuitId;
+
+        if (d.positionOrder == 1) {
+          constructorId = d.constructorId;
+          if (circuitId in circuitWins) {
+            constructors = circuitWins[circuitId]
+            if (constructorId in constructors) {
+              constructors[constructorId] += 1;
+              circuitWins[circuitId] = constructors;
+            }
+            else {
+              constructors[constructorId] = 1;
+              circuitWins[circuitId] = constructors;
+            }
+          }
+          else {
+            constructors = {}
+            constructors[constructorId] = 1;
+            circuitWins[circuitId] = constructors;
+          }
+        }
+      });
+      console.log(circuitWins);
+
+      function generateBarChart(circuitObject) {
+        circuitData = circuitWins[circuitObject.circuitId];
+        console.log(circuitData);
+        var circuitDataKeys = Object.keys(circuitData);
+
+        teams = []
+        circuitDataKeys.forEach(d => {
+          constructorDataPoint = constructorData[d];
+          teams.push(constructorDataPoint.constructorRef);
+        });
+        console.log(teams);
+
+        var winCounts = []
+        circuitDataKeys.forEach((key) => {
+          winCounts.push(circuitData[key]);
+        });
+
+        let winExtent = d3.extent(winCounts)
+        let teamExtent = d3.extent(teams)
+
+        const winScale = d3.scaleLinear().domain([0, 20]).range([barChartHeight, 0]);
+        const teamScale = d3.scaleLinear().domain([teamExtent[0], teamExtent[1]]).range([0, barChartWidth + barMargins.left]);
+
+        xScale = d3.scaleBand()
+          .domain(teams)
+          .range([barMargins.left, barChartWidth]);
+
+        yAxis = d3.axisLeft(winScale)
+          .tickFormat(d3.format("d"));
+
+        barChartArea.append('g')
+          .attr('class', 'y-axis')
+          .attr('transform', `translate(${barMargins.left},${barMargins.top})`)
+          .call(yAxis);
+
+        xAxis = d3.axisBottom(xScale);
+        barChartArea.append('g')
+          .attr('class', 'x-axis')
+          .attr('transform', `translate(${barMargins.left},${barChartHeight + barMargins.top})`)
+          .call(xAxis);
+
+        let barData = [];
+        let keyArray = Array.from(teams);
+        let valArray = Array.from(winCounts);
+
+        for (let i = 0; i < keyArray.length; i++) {
+          dict = {};
+          dict["value"] = valArray[i];
+          dict["key"] = keyArray[i];
+          barData.push(dict);
+        }
+
+        barChartArea.selectAll("line.bar").data(barData)
+          .join("line")
+          .attr("class", "bar")
+          .attr("id", d => d.key)
+          .attr("x1", d => xScale(d.key) + xScale.bandwidth() / 2 + barMargins.left)
+          .attr("x2", d => xScale(d.key) + xScale.bandwidth() / 2 + barMargins.left)
+          .attr("y1", barChartHeight)
+          .attr("y2", d => winScale(d.value))
+          .style("stroke-width", 40)
+          .style("stroke", "red");
+
+      }
+
       // final chart - scatterplot
       const yearExtent = d3.extent(winsYears, d => d.years); // 1 to 19
       const winExtent = d3.extent(winsYears, d => d.wins); // 1 to 103 (some drivers have 0 but they wont be included here)
 
       //scales
       const yearScale = d3.scaleLinear()
-                          .domain(yearExtent)
-                          .range([0, scatterWidthA]);
+        .domain(yearExtent)
+        .range([0, scatterWidthA]);
       const winScale = d3.scaleLinear()
-                         .domain(winExtent)
-                         .range([scatterHeightA-scatterMargins.top-4, 0]);               
-      
-      let leftAxis = d3.axisLeft(winScale);    
+        .domain(winExtent)
+        .range([scatterHeightA - scatterMargins.top - 4, 0]);
+
+      let leftAxis = d3.axisLeft(winScale);
       scatterArea.append("g")
-                 .attr("class", "y-axis axis")
-                 .attr('transform',`translate(${scatterMargins.left},${0})`) 
-                 .attr("stroke", "white")
-                 .call(leftAxis);
+        .attr("class", "y-axis axis")
+        .attr('transform', `translate(${scatterMargins.left},${0})`)
+        .attr("stroke", "white")
+        .call(leftAxis);
 
       let bottomAxis = d3.axisBottom(yearScale);
       scatterArea.append("g")
-                 .attr("class", "x-axis axis")
-                 .attr('transform',`translate(${scatterMargins.left},${scatterHeightA - scatterMargins.top})`) 
-                 .attr("stroke", "white")
-                 .call(bottomAxis);
+        .attr("class", "x-axis axis")
+        .attr('transform', `translate(${scatterMargins.left},${scatterHeightA - scatterMargins.top})`)
+        .attr("stroke", "white")
+        .call(bottomAxis);
       //axis label - bottom
       scatterArea.append("text")
-                 .text("Years Driven")
-                 .attr("class", "axis-label")
-                 .attr('transform', `translate(${scatterWidthA / 2},${scatterHeightA + 20})`)
-                 .style("fill", "white");
+        .text("Years Driven")
+        .attr("class", "axis-label")
+        .attr('transform', `translate(${scatterWidthA / 2},${scatterHeightA + 20})`)
+        .style("fill", "white");
 
       //axis label - left 
       scatterArea.append("text")
-                 .text("Total Wins")
-                 .attr("class", "axis-label")
-                 .attr('transform', `translate(${scatterMargins.left / 2 - 20}, ${scatterHeightA/2 + 30}) rotate(-90)`)
-                 .style("fill", "white");
-                  
-      let driverWins = scatterArea.selectAll("circle.scatter")
-                      .data(winsYears)
-                      .join("circle")
-                      .attr("class", "scatter")
-                      .attr("cx", d => yearScale(d.years) + scatterMargins.left)
-                      .attr("cy", d => winScale(d.wins))
-                      .attr("index", d => d.driverRef)
-                      .attr("r", "4px")
-                      .on("mouseover", function (event, d) {
-                        d3.select(this)
-                          .style("stroke", "white")
-                          .style("stroke-width", "1px")
-                       })
-                      .on("mouseout", function (event, d) {
-                        d3.select(this)
-                          .style("stroke", "none")
-                          .style("stroke-width", "0px")
-                      })
-                      .on("click", function (event, d) {
-                        d3.select(this);
-                        populateDriverNote(d);
-                      })
-                      .style("fill", "red"); 
+        .text("Total Wins")
+        .attr("class", "axis-label")
+        .attr('transform', `translate(${scatterMargins.left / 2 - 20}, ${scatterHeightA / 2 + 30}) rotate(-90)`)
+        .style("fill", "white");
 
-      function populateDriverNote (driverObject) {
+      let driverWins = scatterArea.selectAll("circle.scatter")
+        .data(winsYears)
+        .join("circle")
+        .attr("class", "scatter")
+        .attr("cx", d => yearScale(d.years) + scatterMargins.left)
+        .attr("cy", d => winScale(d.wins))
+        .attr("index", d => d.driverRef)
+        .attr("r", "4px")
+        .on("mouseover", function (event, d) {
+          d3.select(this)
+            .style("stroke", "white")
+            .style("stroke-width", "1px")
+        })
+        .on("mouseout", function (event, d) {
+          d3.select(this)
+            .style("stroke", "none")
+            .style("stroke-width", "0px")
+        })
+        .on("click", function (event, d) {
+          d3.select(this);
+          populateDriverNote(d);
+        })
+        .style("fill", "red");
+
+      function populateDriverNote(driverObject) {
         document.getElementById("driverName").textContent = `${driverObject.driverRef}`;
         document.getElementById("driverYears").textContent = `${driverObject.years} years`;
         document.getElementById("driverWins").textContent = `${driverObject.wins}`;
@@ -357,4 +483,5 @@
   </script>
 
 </body>
+
 </html>

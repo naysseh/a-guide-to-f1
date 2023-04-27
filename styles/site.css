@@ -1,5 +1,5 @@
 html {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.908);
   color: white;
   font-family: Helvetica, sans-serif;
 
@@ -25,7 +25,7 @@ div#scatterArea {
 }
 
 #scatterAnnotations {
- /*  */
+  /*  */
 }
 
 #mapAnnotations {
@@ -74,4 +74,9 @@ div#lineChartArea {
 div#lineText {
   width: 400px;
   font-size: 20px;
+}
+
+.bar-chart-area {
+  display: flex;
+  flex-direction: row;
 }
