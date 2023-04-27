@@ -41,9 +41,10 @@
 
   <div id="lineChartArea">
     <div id="lineText">How have lap times changed per race? Check out previous stats from the <text
-        id="lineBlank">_____</text> race. Click on a circuit on the map to view times. <br><br> Here, we see the fastest
-      lap times from that race for a certain year. Lap times are affected by a number of factors: tire type, fuel level,
-      overall car build, track temperature, weather conditions, and other factors.</div>
+        id="lineBlank">_____</text> race. Click on a circuit on the map to view times. <br><br> <text
+        id="lineEmpty">Here, we see the fastest lap times from that race for a certain year. 
+        Lap times are affected by a number of factors: tire type, fuel level,
+        overall car build, track temperature, weather conditions, and other factors.</text></div>
     <svg id="lineChart" height="500" width="900"></svg>
   </div>
   <div id="scatterArea">
@@ -86,7 +87,7 @@
       .attr("transform", "translate(" + barMargins.left + "," + barMargins.top + ")")
       .attr("class", "barChartBackground");
 
-      const lineChart = d3.select("svg#lineChart");
+    const lineChart = d3.select("svg#lineChart");
     const lineHeight = lineChart.attr("height");
     const lineWidth = lineChart.attr("width");
     const lineMargins = {top: 10, right: 20, bottom: 30, left: 50};
@@ -107,24 +108,20 @@
                           .tickFormat(function(d) {
                                 return d3.timeFormat('%M min %S sec')(d)
                             })
-
     lineChartArea.append("g")
           .attr("class", "yAxisLine y axis")
           .attr("transform",`translate(${lineMargins.left},${lineMargins.top})`)
           .call(leftAxisLine)
-
     lineChartArea.append("g")
           .attr("class", "yGridLine y gridlines")
           .attr("transform",`translate(${lineMargins.left},${lineMargins.top})`)
           .call(leftGridlinesLine);
 
-    
     let bottomAxisLine = d3.axisBottom(xScaleLine)
                         .tickFormat('');
     let bottomGridlinesLine = d3.axisBottom(xScaleLine)
                           .tickSize(-lineGraphHeight)
                           .tickFormat(d3.format("d"))
-
     lineChartArea.append("g")
             .attr('class', 'xAxisLine x axis') 
             .attr('transform',`translate(${lineMargins.left},${lineGraphHeight+lineMargins.top})`)
@@ -133,7 +130,6 @@
             .attr('class', 'xGridLine x gridlines') 
             .attr('transform',`translate(${lineMargins.left},${lineGraphHeight+lineMargins.top})`)
             .call(bottomGridlinesLine);
-
 
     const scatter = d3.select("svg#scatter");
     const scatterHeight = scatter.attr("height");
@@ -226,6 +222,10 @@
 
       function generateLineChart(dictYearLapTime) {
         const transitionTime = Object.keys(dictYearLapTime).length == 0 ? 0 : 3000
+        document.getElementById("lineEmpty").textContent =  Object.keys(dictYearLapTime).length == 0  ? 
+           "Here, the circuit does not have fastest lap times reported." : "Here, we see the fastest lap times from that race for a certain year. \
+        Lap times are affected by a number of factors: tire type, fuel level, \
+        overall car build, track temperature, weather conditions, and other factors.";
         console.log(dictYearLapTime)
         dataDict = []
         const toMilli = (min, sec) => (min * 60 + sec) * 1000;
@@ -244,43 +244,43 @@
         });
 
         let yearsExtent = d3.extent(keys)
-      let timeExtent = d3.extent(values)
+        let timeExtent = d3.extent(values)
 
-      xScaleLine.domain([yearsExtent[0], Number(yearsExtent[1])+1]);
-      yScaleLine.domain([timeExtent[0], timeExtent[1] + 1000]);
+        xScaleLine.domain([yearsExtent[0], Number(yearsExtent[1])+.9]);
+        yScaleLine.domain([timeExtent[0], timeExtent[1] + 1000]);
 
-      lineChartArea.selectAll(".xAxisLine").transition()
-                    .duration(transitionTime)
-                    .call(bottomAxisLine);
-      lineChartArea.selectAll(".xGridLine").transition()
-                    .duration(transitionTime)
-                    .call(bottomGridlinesLine);             
-     
-      lineChartArea.selectAll(".yAxisLine").transition()
-                    .duration(transitionTime)
-                    .call(leftAxisLine);
-      lineChartArea.selectAll(".yGridLine").transition()
-                    .duration(transitionTime)
-                    .call(leftGridlinesLine); 
+        lineChartArea.selectAll(".xAxisLine").transition()
+                      .duration(transitionTime)
+                      .call(bottomAxisLine);
+        lineChartArea.selectAll(".xGridLine").transition()
+                      .duration(transitionTime)
+                      .call(bottomGridlinesLine);             
+      
+        lineChartArea.selectAll(".yAxisLine").transition()
+                      .duration(transitionTime)
+                      .call(leftAxisLine);
+        lineChartArea.selectAll(".yGridLine").transition()
+                      .duration(transitionTime)
+                      .call(leftGridlinesLine); 
 
-      var lineGen = d3.line()
-              .x( d => xScaleLine(Number(d)) )
-              .y( d => yScaleLine(Number(dataDict[d]) ))
-              .curve(d3.curveMonotoneX); 
+        var lineGen = d3.line()
+                .x( d => xScaleLine(Number(d)) )
+                .y( d => yScaleLine(Number(dataDict[d]) ))
+                .curve(d3.curveMonotoneX); 
 
-      const line = lineChartArea.selectAll(".lineSpeed")
-          .data([Object.keys(dataDict)], function(d){ return d });
+        const line = lineChartArea.selectAll(".lineSpeed")
+            .data([Object.keys(dataDict)], function(d){ return d });
 
-      line
-      .join("path")
-      .attr("class","lineSpeed")
-      .attr("transform", `translate(${lineMargins.left})`)
-      .transition()
-      .duration(transitionTime)
-      .attr("d", lineGen)
-        .attr("fill", "none")
-        .attr("stroke", "red")
-        .attr("stroke-width", 3);
+        line
+        .join("path")
+        .attr("class","lineSpeed")
+        .attr("transform", `translate(${lineMargins.left})`)
+        .transition()
+        .duration(transitionTime)
+        .attr("d", lineGen)
+          .attr("fill", "none")
+          .attr("stroke", "red")
+          .attr("stroke-width", 3);
 
       }
 
