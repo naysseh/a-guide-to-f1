@@ -451,8 +451,8 @@
           .attr("id", d => d.key)
           .attr("x1", d => xScaleBar(d.key) + xScaleBar.bandwidth() / 2 + barMargins.left)
           .attr("x2", d => xScaleBar(d.key) + xScaleBar.bandwidth() / 2 + barMargins.left)
-          .attr("y1", barChartHeight)
-          .attr("y2", d => yScaleBar(d.value))
+          .attr("y1", barChartHeight + 10)
+          .attr("y2", d => yScaleBar(d.value) + 10)
           .style("stroke-width", 40)
           .style("stroke", "#c70c0c");
       }
