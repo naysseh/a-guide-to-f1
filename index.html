@@ -172,6 +172,9 @@
       const constructorData = await d3.csv("data/constructors.csv", d3.autoType);
       console.log("constructors", constructorData);
 
+      const winData = await d3.csv("first_place_instances.csv", d3.autoType);
+      console.log("wins", winData);
+
       // This CSV has all the info about every previous circuit, some of which are not currently active but all should have data from the past [this is literally just the list of circuits, not connected w anything else]
       const circuits = await d3.csv("data/circuits.csv", d3.autoType);
       console.log("circuits", circuits);
@@ -352,29 +355,53 @@
 
       // bar chart
       circuitWins = {}
-      combinedData.forEach(d => {
-        raceId = d.raceId;
-        race = races[raceId];
-        circuitId = race.circuitId;
+      // combinedData.forEach(d => {
+      //   raceId = d.raceId;
+      //   race = races[raceId];
+      //   circuitId = race.circuitId;
 
-        if (d.positionOrder == 1) {
-          constructorId = d.constructorId;
-          if (circuitId in circuitWins) {
-            constructors = circuitWins[circuitId]
-            if (constructorId in constructors) {
-              constructors[constructorId] += 1;
-              circuitWins[circuitId] = constructors;
-            }
-            else {
-              constructors[constructorId] = 1;
-              circuitWins[circuitId] = constructors;
-            }
+      //   if (d.positionOrder == 1) {
+      //     constructorId = d.constructorId;
+      //     if (circuitId in circuitWins) {
+      //       constructors = circuitWins[circuitId]
+      //       if (constructorId in constructors) {
+      //         constructors[constructorId] += 1;
+      //         circuitWins[circuitId] = constructors;
+      //       }
+      //       else {
+      //         constructors[constructorId] = 1;
+      //         circuitWins[circuitId] = constructors;
+      //       }
+      //     }
+      //     else {
+      //       constructors = {}
+      //       constructors[constructorId] = 1;
+      //       circuitWins[circuitId] = constructors;
+      //     }
+      //   }
+      // });
+      winData.forEach(d => {
+        circuitId = d.circuitId;
+        constructorId = d.constructorId
+
+        if (circuitId in circuitWins) {
+          constructors = circuitWins[circuitId]
+          if (constructorId in constructors) {
+            constructors[constructorId][0] += 1;
           }
           else {
-            constructors = {}
-            constructors[constructorId] = 1;
-            circuitWins[circuitId] = constructors;
+            constructors[constructorId] = [];
+            constructors[constructorId][0] = 1;
+            constructors[constructorId][1] = d.nameTeam;
           }
+          circuitWins[circuitId] = constructors;
+        }
+        else {
+          constructors = {}
+          constructors[constructorId] = [];
+          constructors[constructorId][0] = 1;
+          constructors[constructorId][1] = d.nameTeam;
+          circuitWins[circuitId] = constructors;
         }
       });
       console.log(circuitWins);
@@ -409,16 +436,18 @@
 
         teams = []
         circuitDataKeys.forEach(d => {
-          constructorDataPoint = constructorData[d];
-          teamName = constructorDataPoint.constructorRef;
-          nameArray = teamName.split("-");
-          teams.push(nameArray[0]);
+          // constructorDataPoint = constructorData[d];
+          // console.log(constructorDataPoint);
+          // teamName = constructorDataPoint.constructorRef;
+          // console.log(teamName);
+          // nameArray = teamName.split("-");
+          teams.push(circuitData[d][1]);
         });
         console.log(teams);
 
         var winCounts = []
         circuitDataKeys.forEach((key) => {
-          winCounts.push(circuitData[key]);
+          winCounts.push(circuitData[key][0]);
         });
 
         xScaleBar.domain(teams);
