@@ -1,0 +1,371 @@
+nameTrack,nameTeam,resultId,raceId,driverId,constructorId,number,positionOrder,points,rank,statusId,driverRef,forename,surname,nationality,year,circuitId
+70th Anniversary Grand Prix,Red Bull,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Abu Dhabi Grand Prix,Lotus F1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Abu Dhabi Grand Prix,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Abu Dhabi Grand Prix,Mercedes,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Abu Dhabi Grand Prix,Red Bull,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Argentine Grand Prix,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Argentine Grand Prix,Cooper,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Argentine Grand Prix,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Argentine Grand Prix,Ferrari,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Argentine Grand Prix,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Argentine Grand Prix,Maserati,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Argentine Grand Prix,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Argentine Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Argentine Grand Prix,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Argentine Grand Prix,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Argentine Grand Prix,Williams,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Argentine Grand Prix,Wolf,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Australian Grand Prix,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Australian Grand Prix,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Australian Grand Prix,Ferrari,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+Australian Grand Prix,Lotus F1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Australian Grand Prix,McLaren,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11
+Australian Grand Prix,Mercedes,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Australian Grand Prix,Red Bull,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Australian Grand Prix,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Australian Grand Prix,Williams,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Austrian Grand Prix,BRM,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Austrian Grand Prix,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Austrian Grand Prix,Ferrari,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Austrian Grand Prix,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Austrian Grand Prix,March,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Austrian Grand Prix,McLaren,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Austrian Grand Prix,Mercedes,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Austrian Grand Prix,Penske,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Austrian Grand Prix,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Austrian Grand Prix,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Austrian Grand Prix,Shadow,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Austrian Grand Prix,Team Lotus,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Austrian Grand Prix,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Azerbaijan Grand Prix,Mercedes,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Azerbaijan Grand Prix,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Bahrain Grand Prix,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Bahrain Grand Prix,Ferrari,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Bahrain Grand Prix,Mercedes,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Bahrain Grand Prix,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Bahrain Grand Prix,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Belgian Grand Prix,Alfa Romeo,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Belgian Grand Prix,BRM,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Belgian Grand Prix,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Belgian Grand Prix,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Belgian Grand Prix,Eagle-Weslake,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Belgian Grand Prix,Ferrari,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18
+Belgian Grand Prix,Jordan,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Belgian Grand Prix,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Belgian Grand Prix,Lotus-Climax,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Belgian Grand Prix,Maserati,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Belgian Grand Prix,McLaren,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13
+Belgian Grand Prix,McLaren-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Belgian Grand Prix,Mercedes,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Belgian Grand Prix,Red Bull,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Belgian Grand Prix,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Belgian Grand Prix,Team Lotus,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Belgian Grand Prix,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Belgian Grand Prix,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Belgian Grand Prix,Williams,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Brazilian Grand Prix,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Brazilian Grand Prix,Brabham,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Brazilian Grand Prix,Ferrari,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11
+Brazilian Grand Prix,Jordan,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Brazilian Grand Prix,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Brazilian Grand Prix,McLaren,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12
+Brazilian Grand Prix,Mercedes,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Brazilian Grand Prix,Red Bull,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Brazilian Grand Prix,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Brazilian Grand Prix,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Brazilian Grand Prix,Williams,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+British Grand Prix,Alfa Romeo,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+British Grand Prix,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+British Grand Prix,Brabham-Repco,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+British Grand Prix,Cooper-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+British Grand Prix,Ferrari,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18
+British Grand Prix,Lotus-Climax,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+British Grand Prix,Lotus-Ford,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+British Grand Prix,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+British Grand Prix,McLaren,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
+British Grand Prix,Mercedes,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+British Grand Prix,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+British Grand Prix,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+British Grand Prix,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+British Grand Prix,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+British Grand Prix,Vanwall,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+British Grand Prix,Williams,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+Caesars Palace Grand Prix,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Caesars Palace Grand Prix,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Canadian Grand Prix,BMW Sauber,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Canadian Grand Prix,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Canadian Grand Prix,Brabham,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Canadian Grand Prix,Brabham-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Canadian Grand Prix,Brabham-Repco,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Canadian Grand Prix,Ferrari,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12
+Canadian Grand Prix,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Canadian Grand Prix,McLaren,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12
+Canadian Grand Prix,McLaren-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Canadian Grand Prix,Mercedes,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Canadian Grand Prix,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Canadian Grand Prix,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Canadian Grand Prix,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Canadian Grand Prix,Williams,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Canadian Grand Prix,Wolf,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Chinese Grand Prix,Ferrari,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Chinese Grand Prix,McLaren,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Chinese Grand Prix,Mercedes,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Chinese Grand Prix,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Chinese Grand Prix,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dallas Grand Prix,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Detroit Grand Prix,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Detroit Grand Prix,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Detroit Grand Prix,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Detroit Grand Prix,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Detroit Grand Prix,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dutch Grand Prix,BRM,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Dutch Grand Prix,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dutch Grand Prix,Brabham-Repco,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dutch Grand Prix,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dutch Grand Prix,Ferrari,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Dutch Grand Prix,Hesketh,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dutch Grand Prix,Lotus-Climax,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Dutch Grand Prix,Lotus-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dutch Grand Prix,Matra-Ford,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Dutch Grand Prix,McLaren,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Dutch Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dutch Grand Prix,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Dutch Grand Prix,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dutch Grand Prix,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Dutch Grand Prix,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dutch Grand Prix,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dutch Grand Prix,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Eifel Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Emilia Romagna Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Emilia Romagna Grand Prix,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+European Grand Prix,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+European Grand Prix,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+European Grand Prix,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+European Grand Prix,Ferrari,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+European Grand Prix,McLaren,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+European Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+European Grand Prix,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+European Grand Prix,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+European Grand Prix,Stewart,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+European Grand Prix,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+French Grand Prix,Alfa Romeo,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+French Grand Prix,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+French Grand Prix,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+French Grand Prix,Brabham-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+French Grand Prix,Brabham-Repco,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+French Grand Prix,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+French Grand Prix,Ferrari,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17
+French Grand Prix,Jordan,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+French Grand Prix,Lotus-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+French Grand Prix,Maserati,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+French Grand Prix,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+French Grand Prix,McLaren,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+French Grand Prix,Mercedes,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+French Grand Prix,Porsche,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+French Grand Prix,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+French Grand Prix,Renault,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+French Grand Prix,Team Lotus,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+French Grand Prix,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+French Grand Prix,Williams,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+German Grand Prix,BRM,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+German Grand Prix,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+German Grand Prix,Brabham,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+German Grand Prix,Brabham-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+German Grand Prix,Brabham-Repco,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+German Grand Prix,Ferrari,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21
+German Grand Prix,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+German Grand Prix,Lotus-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+German Grand Prix,Maserati,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+German Grand Prix,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+German Grand Prix,McLaren,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+German Grand Prix,Mercedes,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+German Grand Prix,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+German Grand Prix,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+German Grand Prix,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+German Grand Prix,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+German Grand Prix,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+German Grand Prix,Williams,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+Hungarian Grand Prix,Alpine F1 Team,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hungarian Grand Prix,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hungarian Grand Prix,Ferrari,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Hungarian Grand Prix,Honda,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hungarian Grand Prix,McLaren,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11
+Hungarian Grand Prix,Mercedes,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Hungarian Grand Prix,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Hungarian Grand Prix,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hungarian Grand Prix,Williams,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Indian Grand Prix,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Indianapolis 500,Epperly,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Indianapolis 500,Kurtis Kraft,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Indianapolis 500,Kuzma,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Indianapolis 500,Watson,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Italian Grand Prix,Alfa Romeo,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,AlphaTauri,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,BRM,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Italian Grand Prix,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,Brabham,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Italian Grand Prix,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,Ferrari,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19
+Italian Grand Prix,Honda,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,Jordan,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,Lotus-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,March,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,Maserati,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Italian Grand Prix,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,McLaren,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+Italian Grand Prix,McLaren-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,Mercedes,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Italian Grand Prix,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Italian Grand Prix,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Italian Grand Prix,Team Lotus,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Italian Grand Prix,Toro Rosso,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Italian Grand Prix,Vanwall,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Italian Grand Prix,Williams,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Japanese Grand Prix,Benetton,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Japanese Grand Prix,Ferrari,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Japanese Grand Prix,McLaren,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+Japanese Grand Prix,Mercedes,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Japanese Grand Prix,Red Bull,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Japanese Grand Prix,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Japanese Grand Prix,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Japanese Grand Prix,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Korean Grand Prix,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Korean Grand Prix,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Luxembourg Grand Prix,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Luxembourg Grand Prix,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Malaysian Grand Prix,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Malaysian Grand Prix,Ferrari,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Malaysian Grand Prix,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Malaysian Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Malaysian Grand Prix,Red Bull,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Malaysian Grand Prix,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Malaysian Grand Prix,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Mexican Grand Prix,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Mexican Grand Prix,Brabham-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Mexican Grand Prix,Cooper-Maserati,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Mexican Grand Prix,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Mexican Grand Prix,Honda,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Mexican Grand Prix,Lotus-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Mexican Grand Prix,Lotus-Ford,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Mexican Grand Prix,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Mexican Grand Prix,McLaren-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Mexican Grand Prix,Mercedes,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Mexican Grand Prix,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Mexican Grand Prix,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Mexico City Grand Prix,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Miami Grand Prix,Red Bull,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Monaco Grand Prix,Alfa Romeo,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Monaco Grand Prix,BRM,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Monaco Grand Prix,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Monaco Grand Prix,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Monaco Grand Prix,Brabham-Repco,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Monaco Grand Prix,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Monaco Grand Prix,Cooper,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Monaco Grand Prix,Cooper-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Monaco Grand Prix,Ferrari,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+Monaco Grand Prix,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Monaco Grand Prix,Lotus-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Monaco Grand Prix,Lotus-Ford,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Monaco Grand Prix,Maserati,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Monaco Grand Prix,McLaren,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15
+Monaco Grand Prix,Mercedes,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Monaco Grand Prix,Red Bull,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Monaco Grand Prix,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Monaco Grand Prix,Team Lotus,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Monaco Grand Prix,Tyrrell,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Monaco Grand Prix,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Monaco Grand Prix,Wolf,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Moroccan Grand Prix,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Pacific Grand Prix,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Pescara Grand Prix,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Portuguese Grand Prix,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Portuguese Grand Prix,Cooper-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Portuguese Grand Prix,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Portuguese Grand Prix,McLaren,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Portuguese Grand Prix,Mercedes,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Portuguese Grand Prix,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Portuguese Grand Prix,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Portuguese Grand Prix,Williams,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Qatar Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Russian Grand Prix,Mercedes,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Sakhir Grand Prix,Racing Point,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+San Marino Grand Prix,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+San Marino Grand Prix,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+San Marino Grand Prix,Ferrari,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+San Marino Grand Prix,McLaren,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+San Marino Grand Prix,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+San Marino Grand Prix,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+San Marino Grand Prix,Williams,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Saudi Arabian Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Saudi Arabian Grand Prix,Red Bull,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Singapore Grand Prix,Ferrari,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Singapore Grand Prix,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Singapore Grand Prix,Mercedes,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Singapore Grand Prix,Red Bull,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Singapore Grand Prix,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+South African Grand Prix,BRM,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+South African Grand Prix,Brabham,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+South African Grand Prix,Cooper-Maserati,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+South African Grand Prix,Ferrari,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+South African Grand Prix,Lotus-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+South African Grand Prix,Lotus-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+South African Grand Prix,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+South African Grand Prix,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+South African Grand Prix,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+South African Grand Prix,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+South African Grand Prix,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+South African Grand Prix,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Spanish Grand Prix,Alfa Romeo,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Spanish Grand Prix,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Spanish Grand Prix,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Spanish Grand Prix,Ferrari,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12
+Spanish Grand Prix,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Spanish Grand Prix,Lotus-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Spanish Grand Prix,March,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Spanish Grand Prix,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Spanish Grand Prix,McLaren,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Spanish Grand Prix,Mercedes,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Spanish Grand Prix,Red Bull,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Spanish Grand Prix,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Spanish Grand Prix,Team Lotus,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Spanish Grand Prix,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Spanish Grand Prix,Williams,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Styrian Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Styrian Grand Prix,Red Bull,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Swedish Grand Prix,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Swedish Grand Prix,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Swedish Grand Prix,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Swedish Grand Prix,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Swedish Grand Prix,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Swiss Grand Prix,Alfa Romeo,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Swiss Grand Prix,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Swiss Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Swiss Grand Prix,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+São Paulo Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Turkish Grand Prix,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Turkish Grand Prix,Ferrari,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Turkish Grand Prix,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Turkish Grand Prix,Mercedes,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Turkish Grand Prix,Red Bull,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Tuscan Grand Prix,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+United States Grand Prix,BRM,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+United States Grand Prix,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+United States Grand Prix,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+United States Grand Prix,Ferrari,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+United States Grand Prix,Lotus-BRM,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+United States Grand Prix,Lotus-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+United States Grand Prix,Lotus-Ford,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+United States Grand Prix,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+United States Grand Prix,McLaren,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+United States Grand Prix,Mercedes,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+United States Grand Prix,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+United States Grand Prix,Team Lotus,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+United States Grand Prix,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+United States Grand Prix,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+United States Grand Prix West,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+United States Grand Prix West,Ferrari,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+United States Grand Prix West,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+United States Grand Prix West,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+United States Grand Prix West,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1

@@ -1,0 +1,428 @@
+nameTrack,nameTeam,resultId,raceId,driverId,constructorId,number,positionOrder,points,rank,statusId,driverRef,forename,surname,nationality,year,circuitId
+AVUS,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Adelaide Street Circuit,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Adelaide Street Circuit,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Adelaide Street Circuit,McLaren,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Adelaide Street Circuit,Williams,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Ain Diab,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Aintree,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Aintree,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Aintree,Lotus-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Aintree,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Aintree,Vanwall,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Albert Park Grand Prix Circuit,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Albert Park Grand Prix Circuit,Ferrari,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+Albert Park Grand Prix Circuit,Lotus F1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Albert Park Grand Prix Circuit,McLaren,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Albert Park Grand Prix Circuit,Mercedes,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Albert Park Grand Prix Circuit,Red Bull,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Albert Park Grand Prix Circuit,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Albert Park Grand Prix Circuit,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Enzo e Dino Ferrari,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Enzo e Dino Ferrari,Brabham,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autodromo Enzo e Dino Ferrari,Ferrari,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Autodromo Enzo e Dino Ferrari,McLaren,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Autodromo Enzo e Dino Ferrari,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Enzo e Dino Ferrari,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autodromo Enzo e Dino Ferrari,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Enzo e Dino Ferrari,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Enzo e Dino Ferrari,Williams,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Autodromo Internazionale del Mugello,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,Alfa Romeo,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,AlphaTauri,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,BRM,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Autodromo Nazionale di Monza,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,Brabham,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autodromo Nazionale di Monza,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,Ferrari,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19
+Autodromo Nazionale di Monza,Honda,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,Jordan,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,Lotus-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,March,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,Maserati,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autodromo Nazionale di Monza,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,McLaren,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+Autodromo Nazionale di Monza,McLaren-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,Mercedes,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Autodromo Nazionale di Monza,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Autodromo Nazionale di Monza,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autodromo Nazionale di Monza,Team Lotus,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Autodromo Nazionale di Monza,Toro Rosso,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autodromo Nazionale di Monza,Vanwall,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autodromo Nazionale di Monza,Williams,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Autódromo Hermanos Rodríguez,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Hermanos Rodríguez,Brabham-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Hermanos Rodríguez,Cooper-Maserati,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Hermanos Rodríguez,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autódromo Hermanos Rodríguez,Honda,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Hermanos Rodríguez,Lotus-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Hermanos Rodríguez,Lotus-Ford,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autódromo Hermanos Rodríguez,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autódromo Hermanos Rodríguez,McLaren-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Hermanos Rodríguez,Mercedes,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Autódromo Hermanos Rodríguez,Red Bull,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Autódromo Hermanos Rodríguez,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Autódromo Internacional Nelson Piquet,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Internacional Nelson Piquet,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autódromo Internacional Nelson Piquet,McLaren,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Autódromo Internacional Nelson Piquet,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Internacional Nelson Piquet,Williams,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autódromo Internacional do Algarve,Mercedes,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autódromo José Carlos Pace,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autódromo José Carlos Pace,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo José Carlos Pace,Ferrari,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+Autódromo José Carlos Pace,Jordan,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo José Carlos Pace,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo José Carlos Pace,McLaren,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Autódromo José Carlos Pace,Mercedes,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Autódromo José Carlos Pace,Red Bull,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Autódromo José Carlos Pace,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo José Carlos Pace,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo José Carlos Pace,Williams,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Autódromo Juan y Oscar Gálvez,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Juan y Oscar Gálvez,Cooper,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Juan y Oscar Gálvez,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Juan y Oscar Gálvez,Ferrari,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Autódromo Juan y Oscar Gálvez,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Juan y Oscar Gálvez,Maserati,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autódromo Juan y Oscar Gálvez,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autódromo Juan y Oscar Gálvez,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Juan y Oscar Gálvez,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autódromo Juan y Oscar Gálvez,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo Juan y Oscar Gálvez,Williams,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Autódromo Juan y Oscar Gálvez,Wolf,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo do Estoril,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo do Estoril,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Autódromo do Estoril,McLaren,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Autódromo do Estoril,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Autódromo do Estoril,Williams,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Bahrain International Circuit,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Bahrain International Circuit,Ferrari,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Bahrain International Circuit,Mercedes,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Bahrain International Circuit,Racing Point,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Bahrain International Circuit,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Bahrain International Circuit,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Baku City Circuit,Mercedes,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Baku City Circuit,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Brands Hatch,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Brands Hatch,Brabham-Repco,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Brands Hatch,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Brands Hatch,Lotus-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Brands Hatch,Lotus-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Brands Hatch,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Brands Hatch,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Brands Hatch,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Brands Hatch,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Buddh International Circuit,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Charade Circuit,Lotus-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Charade Circuit,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Charade Circuit,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Charade Circuit,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Bremgarten,Alfa Romeo,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Bremgarten,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Bremgarten,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Gilles Villeneuve,BMW Sauber,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Gilles Villeneuve,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Gilles Villeneuve,Brabham,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Gilles Villeneuve,Ferrari,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11
+Circuit Gilles Villeneuve,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Gilles Villeneuve,McLaren,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+Circuit Gilles Villeneuve,Mercedes,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Circuit Gilles Villeneuve,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Circuit Gilles Villeneuve,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Gilles Villeneuve,Williams,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Circuit Mont-Tremblant,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Mont-Tremblant,McLaren-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Park Zandvoort,BRM,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Park Zandvoort,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Park Zandvoort,Brabham-Repco,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Park Zandvoort,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Park Zandvoort,Ferrari,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Circuit Park Zandvoort,Hesketh,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Park Zandvoort,Lotus-Climax,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Circuit Park Zandvoort,Lotus-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Park Zandvoort,Matra-Ford,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Park Zandvoort,McLaren,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Circuit Park Zandvoort,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Park Zandvoort,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Park Zandvoort,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Park Zandvoort,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Park Zandvoort,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Park Zandvoort,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Park Zandvoort,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Paul Ricard,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Paul Ricard,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Paul Ricard,McLaren,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Circuit Paul Ricard,Mercedes,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Paul Ricard,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Paul Ricard,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Paul Ricard,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit Paul Ricard,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit Paul Ricard,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Circuit de Barcelona-Catalunya,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Barcelona-Catalunya,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Barcelona-Catalunya,Ferrari,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Circuit de Barcelona-Catalunya,McLaren,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Circuit de Barcelona-Catalunya,Mercedes,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Circuit de Barcelona-Catalunya,Red Bull,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Circuit de Barcelona-Catalunya,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Barcelona-Catalunya,Williams,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Circuit de Monaco,Alfa Romeo,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Monaco,BRM,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Circuit de Monaco,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit de Monaco,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Monaco,Brabham-Repco,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Monaco,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Monaco,Cooper,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Monaco,Cooper-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit de Monaco,Ferrari,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+Circuit de Monaco,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Monaco,Lotus-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Monaco,Lotus-Ford,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit de Monaco,Maserati,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit de Monaco,McLaren,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15
+Circuit de Monaco,Mercedes,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Circuit de Monaco,Red Bull,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Circuit de Monaco,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit de Monaco,Team Lotus,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Circuit de Monaco,Tyrrell,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Circuit de Monaco,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Circuit de Monaco,Wolf,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Nevers Magny-Cours,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit de Nevers Magny-Cours,Ferrari,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Circuit de Nevers Magny-Cours,Jordan,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Nevers Magny-Cours,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Nevers Magny-Cours,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Nevers Magny-Cours,Williams,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Circuit de Pedralbes,Alfa Romeo,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Pedralbes,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Spa-Francorchamps,Alfa Romeo,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit de Spa-Francorchamps,BRM,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Spa-Francorchamps,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Circuit de Spa-Francorchamps,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Spa-Francorchamps,Eagle-Weslake,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Spa-Francorchamps,Ferrari,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
+Circuit de Spa-Francorchamps,Jordan,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Spa-Francorchamps,Lotus-Climax,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Circuit de Spa-Francorchamps,Maserati,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Spa-Francorchamps,McLaren,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11
+Circuit de Spa-Francorchamps,McLaren-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Spa-Francorchamps,Mercedes,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Circuit de Spa-Francorchamps,Red Bull,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Circuit de Spa-Francorchamps,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Spa-Francorchamps,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Spa-Francorchamps,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit de Spa-Francorchamps,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Circuit of the Americas,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit of the Americas,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuit of the Americas,Mercedes,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Circuit of the Americas,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Circuito da Boavista,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuito da Boavista,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuito de Jerez,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuito de Jerez,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuito de Jerez,McLaren,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Circuito de Jerez,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Circuito de Jerez,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Detroit Street Circuit,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Detroit Street Circuit,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Detroit Street Circuit,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Detroit Street Circuit,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Detroit Street Circuit,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dijon-Prenois,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Dijon-Prenois,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Dijon-Prenois,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Dijon-Prenois,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Donington Park,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Fair Park,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Fuji Speedway,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Fuji Speedway,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Fuji Speedway,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hockenheimring,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Hockenheimring,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hockenheimring,Ferrari,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11
+Hockenheimring,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hockenheimring,McLaren,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Hockenheimring,Mercedes,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Hockenheimring,Red Bull,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hockenheimring,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hockenheimring,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Hockenheimring,Williams,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+Hungaroring,Alpine F1 Team,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hungaroring,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hungaroring,Ferrari,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Hungaroring,Honda,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hungaroring,McLaren,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11
+Hungaroring,Mercedes,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Hungaroring,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Hungaroring,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Hungaroring,Williams,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Indianapolis Motor Speedway,Epperly,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Indianapolis Motor Speedway,Ferrari,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Indianapolis Motor Speedway,Kurtis Kraft,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Indianapolis Motor Speedway,Kuzma,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Indianapolis Motor Speedway,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Indianapolis Motor Speedway,Watson,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Istanbul Park,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Istanbul Park,Ferrari,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Istanbul Park,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Istanbul Park,Mercedes,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Istanbul Park,Red Bull,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Jarama,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Jarama,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Jarama,Lotus-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Jarama,March,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Jarama,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Jarama,Team Lotus,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Jeddah Corniche Circuit,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Jeddah Corniche Circuit,Red Bull,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Korean International Circuit,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Korean International Circuit,Red Bull,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Kyalami,Brabham,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Kyalami,Cooper-Maserati,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Kyalami,Ferrari,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Kyalami,Lotus-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Kyalami,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Kyalami,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Kyalami,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Kyalami,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Kyalami,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Kyalami,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Las Vegas Street Circuit,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Las Vegas Street Circuit,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Le Mans,Brabham-Repco,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Long Beach,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Long Beach,Ferrari,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Long Beach,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Long Beach,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Long Beach,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Losail International Circuit,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Marina Bay Street Circuit,Ferrari,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Marina Bay Street Circuit,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Marina Bay Street Circuit,Mercedes,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Marina Bay Street Circuit,Red Bull,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Marina Bay Street Circuit,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Miami International Autodrome,Red Bull,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Monsanto Park Circuit,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Montjuïc,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Montjuïc,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Montjuïc,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Montjuïc,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Mosport International Raceway,Brabham-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Mosport International Raceway,Brabham-Repco,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Mosport International Raceway,McLaren,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Mosport International Raceway,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Mosport International Raceway,Wolf,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nivelles-Baulers,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nivelles-Baulers,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nürburgring,BRM,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nürburgring,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nürburgring,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nürburgring,Brabham-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nürburgring,Brabham-Repco,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Nürburgring,Ferrari,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
+Nürburgring,Lotus-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Nürburgring,Maserati,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nürburgring,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nürburgring,McLaren,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Nürburgring,Mercedes,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Nürburgring,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Nürburgring,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nürburgring,Stewart,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nürburgring,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Nürburgring,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nürburgring,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Okayama International Circuit,Benetton,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Pescara Circuit,Vanwall,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Phoenix street circuit,McLaren,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Prince George Circuit,BRM,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Prince George Circuit,Lotus-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Red Bull Ring,BRM,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Red Bull Ring,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Red Bull Ring,Ferrari,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Red Bull Ring,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Red Bull Ring,March,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Red Bull Ring,McLaren,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Red Bull Ring,Mercedes,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Red Bull Ring,Penske,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Red Bull Ring,Red Bull,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Red Bull Ring,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Red Bull Ring,Shadow,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Red Bull Ring,Team Lotus,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Red Bull Ring,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Reims-Gueux,Alfa Romeo,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Reims-Gueux,Brabham-Repco,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Reims-Gueux,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Reims-Gueux,Ferrari,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Reims-Gueux,Lotus-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Reims-Gueux,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Riverside International Raceway,Team Lotus,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Rouen-Les-Essarts,Brabham-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Rouen-Les-Essarts,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Rouen-Les-Essarts,Maserati,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Rouen-Les-Essarts,Porsche,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Scandinavian Raceway,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Scandinavian Raceway,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Scandinavian Raceway,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Scandinavian Raceway,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Scandinavian Raceway,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Sebring International Raceway,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Sepang International Circuit,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Sepang International Circuit,Ferrari,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Sepang International Circuit,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Sepang International Circuit,Mercedes,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Sepang International Circuit,Red Bull,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Sepang International Circuit,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Sepang International Circuit,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Shanghai International Circuit,Ferrari,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Shanghai International Circuit,McLaren,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Shanghai International Circuit,Mercedes,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Shanghai International Circuit,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Shanghai International Circuit,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Silverstone Circuit,Alfa Romeo,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Silverstone Circuit,Benetton,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Silverstone Circuit,Cooper-Climax,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Silverstone Circuit,Ferrari,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15
+Silverstone Circuit,Lotus-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Silverstone Circuit,Lotus-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Silverstone Circuit,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Silverstone Circuit,McLaren,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12
+Silverstone Circuit,Mercedes,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Silverstone Circuit,Red Bull,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Silverstone Circuit,Renault,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Silverstone Circuit,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Silverstone Circuit,Williams,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Sochi Autodrom,Mercedes,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+Suzuka Circuit,Benetton,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Suzuka Circuit,Ferrari,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Suzuka Circuit,McLaren,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+Suzuka Circuit,Mercedes,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Suzuka Circuit,Red Bull,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Suzuka Circuit,Renault,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Suzuka Circuit,Williams,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Valencia Street Circuit,Brawn,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Valencia Street Circuit,Ferrari,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Valencia Street Circuit,Red Bull,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Watkins Glen,BRM,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Watkins Glen,Brabham,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Watkins Glen,Ferrari,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Watkins Glen,Lotus-BRM,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Watkins Glen,Lotus-Climax,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Watkins Glen,Lotus-Ford,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Watkins Glen,Matra-Ford,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Watkins Glen,McLaren,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Watkins Glen,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Watkins Glen,Tyrrell,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Watkins Glen,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Yas Marina Circuit,Lotus F1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Yas Marina Circuit,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Yas Marina Circuit,Mercedes,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Yas Marina Circuit,Red Bull,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+Zeltweg,Ferrari,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Zolder,Ferrari,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Zolder,Ligier,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Zolder,McLaren,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Zolder,Team Lotus,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+Zolder,Tyrrell,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Zolder,Williams,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
