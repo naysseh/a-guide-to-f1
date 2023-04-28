@@ -29,22 +29,27 @@
         <br>
         <text id="circuitLocation"></text>
       </div>
-      <button>Scroll down button</button>
+      <button id="next1" onclick="next1()">View Next &#9660;</button>
     </div>
 
     <svg id="map" height="900" width="900"></svg>
   </div>
-  <div class="bar-chart-area">
-    <div class="bar-desc">Who's been winning the <span id="circuitBlank">_____</span> race?</div>
+  <div class="bar-chart-area" id="barChartArea">
+    <div class="bar-desc">Who's been winning the <span id="circuitBlank">_____</span> race? <br>
+      <button id="next2" onclick="next2()">View Next &#9660;</button>
+    </div>
+
     <svg id="barChart" height="500" width="800"></svg>
   </div>
 
   <div id="lineChartArea">
     <div id="lineText">How have lap times changed per race? Check out previous stats from the <text
         id="lineBlank">_____</text> race. Click on a circuit on the map to view times. <br><br> <text
-        id="lineEmpty">Here, we see the fastest lap times from that race for a certain year. 
+        id="lineEmpty">Here, we see the fastest lap times from that race for a certain year.
         Lap times are affected by a number of factors: tire type, fuel level,
-        overall car build, track temperature, weather conditions, and other factors.</text></div>
+        overall car build, track temperature, weather conditions, and other factors.</text> <br>
+      <button id="next3" onclick="next3()">View Next &#9660;</button>
+    </div>
     <svg id="lineChart" height="500" width="900"></svg>
   </div>
   <div id="scatterArea">
@@ -64,6 +69,7 @@
         <text>Win count:</text>
         <text id="driverWins"></text>
       </div>
+      <button id="top" onclick="topScroll()">Back to Top &#9650;</button>
     </div>
     <svg id="scatter" height="500" width="900"></svg>
   </div>
@@ -90,46 +96,46 @@
     const lineChart = d3.select("svg#lineChart");
     const lineHeight = lineChart.attr("height");
     const lineWidth = lineChart.attr("width");
-    const lineMargins = {top: 10, right: 20, bottom: 30, left: 50};
+    const lineMargins = { top: 10, right: 20, bottom: 30, left: 50 };
     const lineGraphHeight = lineHeight - lineMargins.top - lineMargins.bottom
     const lineGraphWidth = lineWidth - lineMargins.right - lineMargins.left
-    let lineAnnotations = lineChart.append("g").attr("id","line-annotations");
+    let lineAnnotations = lineChart.append("g").attr("id", "line-annotations");
     let lineChartArea = lineChart.append("g")
-                  .attr("transform","translate("+lineMargins.left+","+lineMargins.top+")")
-                  .attr("class", "lineChartBackground");
+      .attr("transform", "translate(" + lineMargins.left + "," + lineMargins.top + ")")
+      .attr("class", "lineChartBackground");
 
     let xScaleLine = d3.scaleLinear().range([0, lineGraphWidth]);
-    let yScaleLine = d3.scaleLinear().range([lineGraphHeight, 0]); 
+    let yScaleLine = d3.scaleLinear().range([lineGraphHeight, 0]);
 
     let leftAxisLine = d3.axisLeft(yScaleLine)
-                         .tickFormat("");
-    let leftGridlinesLine= d3.axisLeft(yScaleLine)
-                          .tickSize(-lineGraphWidth-10)
-                          .tickFormat(function(d) {
-                                return d3.timeFormat('%M min %S sec')(d)
-                            })
+      .tickFormat("");
+    let leftGridlinesLine = d3.axisLeft(yScaleLine)
+      .tickSize(-lineGraphWidth - 10)
+      .tickFormat(function (d) {
+        return d3.timeFormat('%M min %S sec')(d)
+      })
     lineChartArea.append("g")
-          .attr("class", "yAxisLine y axis")
-          .attr("transform",`translate(${lineMargins.left},${lineMargins.top})`)
-          .call(leftAxisLine)
+      .attr("class", "yAxisLine y axis")
+      .attr("transform", `translate(${lineMargins.left},${lineMargins.top})`)
+      .call(leftAxisLine)
     lineChartArea.append("g")
-          .attr("class", "yGridLine y gridlines")
-          .attr("transform",`translate(${lineMargins.left},${lineMargins.top})`)
-          .call(leftGridlinesLine);
+      .attr("class", "yGridLine y gridlines")
+      .attr("transform", `translate(${lineMargins.left},${lineMargins.top})`)
+      .call(leftGridlinesLine);
 
     let bottomAxisLine = d3.axisBottom(xScaleLine)
-                        .tickFormat('');
+      .tickFormat('');
     let bottomGridlinesLine = d3.axisBottom(xScaleLine)
-                          .tickSize(-lineGraphHeight)
-                          .tickFormat(d3.format("d"))
+      .tickSize(-lineGraphHeight)
+      .tickFormat(d3.format("d"))
     lineChartArea.append("g")
-            .attr('class', 'xAxisLine x axis') 
-            .attr('transform',`translate(${lineMargins.left},${lineGraphHeight+lineMargins.top})`)
-            .call(bottomAxisLine);
+      .attr('class', 'xAxisLine x axis')
+      .attr('transform', `translate(${lineMargins.left},${lineGraphHeight + lineMargins.top})`)
+      .call(bottomAxisLine);
     lineChartArea.append("g")
-            .attr('class', 'xGridLine x gridlines') 
-            .attr('transform',`translate(${lineMargins.left},${lineGraphHeight+lineMargins.top})`)
-            .call(bottomGridlinesLine);
+      .attr('class', 'xGridLine x gridlines')
+      .attr('transform', `translate(${lineMargins.left},${lineGraphHeight + lineMargins.top})`)
+      .call(bottomGridlinesLine);
 
     const scatter = d3.select("svg#scatter");
     const scatterHeight = scatter.attr("height");
@@ -222,8 +228,8 @@
 
       function generateLineChart(dictYearLapTime) {
         const transitionTime = Object.keys(dictYearLapTime).length == 0 ? 0 : 3000
-        document.getElementById("lineEmpty").textContent =  Object.keys(dictYearLapTime).length == 0  ? 
-           "Here, the circuit does not have fastest lap times reported." : "Here, we see the fastest lap times from that race for a certain year. \
+        document.getElementById("lineEmpty").textContent = Object.keys(dictYearLapTime).length == 0 ?
+          "Here, the circuit does not have fastest lap times reported." : "Here, we see the fastest lap times from that race for a certain year. \
         Lap times are affected by a number of factors: tire type, fuel level, \
         overall car build, track temperature, weather conditions, and other factors.";
         console.log(dictYearLapTime)
@@ -246,40 +252,40 @@
         let yearsExtent = d3.extent(keys)
         let timeExtent = d3.extent(values)
 
-        xScaleLine.domain([yearsExtent[0], Number(yearsExtent[1])+.9]);
+        xScaleLine.domain([yearsExtent[0], Number(yearsExtent[1]) + .9]);
         yScaleLine.domain([timeExtent[0], timeExtent[1] + 1000]);
 
         lineChartArea.selectAll(".xAxisLine").transition()
-                      .duration(transitionTime)
-                      .call(bottomAxisLine);
+          .duration(transitionTime)
+          .call(bottomAxisLine);
         lineChartArea.selectAll(".xGridLine").transition()
-                      .duration(transitionTime)
-                      .call(bottomGridlinesLine);             
-      
+          .duration(transitionTime)
+          .call(bottomGridlinesLine);
+
         lineChartArea.selectAll(".yAxisLine").transition()
-                      .duration(transitionTime)
-                      .call(leftAxisLine);
+          .duration(transitionTime)
+          .call(leftAxisLine);
         lineChartArea.selectAll(".yGridLine").transition()
-                      .duration(transitionTime)
-                      .call(leftGridlinesLine); 
+          .duration(transitionTime)
+          .call(leftGridlinesLine);
 
         var lineGen = d3.line()
-                .x( d => xScaleLine(Number(d)) )
-                .y( d => yScaleLine(Number(dataDict[d]) ))
-                .curve(d3.curveMonotoneX); 
+          .x(d => xScaleLine(Number(d)))
+          .y(d => yScaleLine(Number(dataDict[d])))
+          .curve(d3.curveMonotoneX);
 
         const line = lineChartArea.selectAll(".lineSpeed")
-            .data([Object.keys(dataDict)], function(d){ return d });
+          .data([Object.keys(dataDict)], function (d) { return d });
 
         line
-        .join("path")
-        .attr("class","lineSpeed")
-        .attr("transform", `translate(${lineMargins.left})`)
-        .transition()
-        .duration(transitionTime)
-        .attr("d", lineGen)
+          .join("path")
+          .attr("class", "lineSpeed")
+          .attr("transform", `translate(${lineMargins.left})`)
+          .transition()
+          .duration(transitionTime)
+          .attr("d", lineGen)
           .attr("fill", "none")
-          .attr("stroke", "red")
+          .attr("stroke", "#c70c0c")
           .attr("stroke-width", 3);
 
       }
@@ -302,7 +308,7 @@
         if (raceLapTimes.length > 0) {
           generateLineChart(raceLapTimes)
         }
-        else{
+        else {
           generateLineChart([])
         }
       }
@@ -314,7 +320,7 @@
         .attr("cx", d => projection([d.lng, d.lat])[0])
         .attr("cy", d => projection([d.lng, d.lat])[1])
         .attr("r", "3px")
-        .style("fill", "red")
+        .style("fill", "#c70c0c")
         .on("mouseover", function (event, d) {
           d3.select(this)
             .style("stroke", "white")
@@ -373,6 +379,29 @@
       });
       console.log(circuitWins);
 
+      let xScaleBar = d3.scaleBand().range([0, barChartWidth]);
+      let yScaleBar = d3.scaleLinear().domain([0, 20]).range([barChartHeight, 0]);
+
+      let leftAxisBar = d3.axisLeft(yScaleBar);
+      let leftGridlinesBar = d3.axisLeft(yScaleBar)
+        .tickSize(-barChartWidth - 10)
+        .tickFormat("")
+      barChartArea.append("g")
+        .attr("class", "yAxisBar y axis")
+        .attr("transform", `translate(${barMargins.left},${barMargins.top})`)
+        .call(leftAxisBar)
+      barChartArea.append("g")
+        .attr("class", "yGridBar y gridlines")
+        .attr("transform", `translate(${barMargins.left},${barMargins.top})`)
+        .call(leftGridlinesBar);
+
+      let bottomAxisBar = d3.axisBottom(xScaleBar);
+
+      barChartArea.append("g")
+        .attr('class', 'xAxisBar x-axis')
+        .attr('transform', `translate(${barMargins.left},${barChartHeight + barMargins.top})`)
+        .call(bottomAxisBar);
+
       function generateBarChart(circuitObject) {
         circuitData = circuitWins[circuitObject.circuitId];
         console.log(circuitData);
@@ -381,7 +410,9 @@
         teams = []
         circuitDataKeys.forEach(d => {
           constructorDataPoint = constructorData[d];
-          teams.push(constructorDataPoint.constructorRef);
+          teamName = constructorDataPoint.constructorRef;
+          nameArray = teamName.split("-");
+          teams.push(nameArray[0]);
         });
         console.log(teams);
 
@@ -390,29 +421,18 @@
           winCounts.push(circuitData[key]);
         });
 
-        let winExtent = d3.extent(winCounts)
-        let teamExtent = d3.extent(teams)
+        xScaleBar.domain(teams);
 
-        const winScale = d3.scaleLinear().domain([0, 20]).range([barChartHeight, 0]);
-        const teamScale = d3.scaleLinear().domain([teamExtent[0], teamExtent[1]]).range([0, barChartWidth + barMargins.left]);
+        barChartArea.selectAll(".xAxisBar").transition()
+          .duration(3000)
+          .call(bottomAxisBar);
 
-        xScale = d3.scaleBand()
-          .domain(teams)
-          .range([barMargins.left, barChartWidth]);
-
-        yAxis = d3.axisLeft(winScale)
-          .tickFormat(d3.format("d"));
-
-        barChartArea.append('g')
-          .attr('class', 'y-axis')
-          .attr('transform', `translate(${barMargins.left},${barMargins.top})`)
-          .call(yAxis);
-
-        xAxis = d3.axisBottom(xScale);
-        barChartArea.append('g')
-          .attr('class', 'x-axis')
-          .attr('transform', `translate(${barMargins.left},${barChartHeight + barMargins.top})`)
-          .call(xAxis);
+        barChartArea.selectAll(".yAxisBar").transition()
+          .duration(3000)
+          .call(leftAxisBar);
+        barChartArea.selectAll(".yGridBar").transition()
+          .duration(3000)
+          .call(leftGridlinesBar);
 
         let barData = [];
         let keyArray = Array.from(teams);
@@ -429,13 +449,12 @@
           .join("line")
           .attr("class", "bar")
           .attr("id", d => d.key)
-          .attr("x1", d => xScale(d.key) + xScale.bandwidth() / 2 + barMargins.left)
-          .attr("x2", d => xScale(d.key) + xScale.bandwidth() / 2 + barMargins.left)
+          .attr("x1", d => xScaleBar(d.key) + xScaleBar.bandwidth() / 2 + barMargins.left)
+          .attr("x2", d => xScaleBar(d.key) + xScaleBar.bandwidth() / 2 + barMargins.left)
           .attr("y1", barChartHeight)
-          .attr("y2", d => winScale(d.value))
+          .attr("y2", d => yScaleBar(d.value))
           .style("stroke-width", 40)
-          .style("stroke", "red");
-
+          .style("stroke", "#c70c0c");
       }
 
       // final chart - scatterplot
@@ -467,14 +486,14 @@
       scatterArea.append("text")
         .text("Years Driven")
         .attr("class", "axis-label")
-        .attr('transform', `translate(${scatterWidthA / 2},${scatterHeightA + 20})`)
+        .attr('transform', `translate(${scatterWidthA / 2},${scatterHeightA + 30})`)
         .style("fill", "white");
 
       //axis label - left 
       scatterArea.append("text")
         .text("Total Wins")
         .attr("class", "axis-label")
-        .attr('transform', `translate(${scatterMargins.left / 2 - 20}, ${scatterHeightA / 2 + 30}) rotate(-90)`)
+        .attr('transform', `translate(${scatterMargins.left / 2 - 25}, ${scatterHeightA / 2 + 30}) rotate(-90)`)
         .style("fill", "white");
 
       let driverWins = scatterArea.selectAll("circle.scatter")
@@ -499,7 +518,7 @@
           d3.select(this);
           populateDriverNote(d);
         })
-        .style("fill", "red");
+        .style("fill", "#c70c0c");
 
       function populateDriverNote(driverObject) {
         document.getElementById("driverName").textContent = `${driverObject.driverRef}`;
@@ -510,6 +529,26 @@
 
     };
     requestData();
+
+    function next1() {
+      var area = document.getElementById("barChartArea");
+      area.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function next2() {
+      var area = document.getElementById("lineChartArea");
+      area.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function next3() {
+      var area = document.getElementById("scatterArea");
+      area.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function topScroll() {
+      var area = document.getElementById("map");
+      area.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   </script>
 
 </body>
