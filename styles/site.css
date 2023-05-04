@@ -2,13 +2,16 @@ html {
   background-color: rgba(0, 0, 0, 0.908);
   color: white;
   font-family: Helvetica, sans-serif;
+}
 
+text {
+  color: white !important;
 }
 
 div#map {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   margin-left: 20px;
 }
 
@@ -27,7 +30,7 @@ div#map {
 }
 
 #mapAnnotations {
-  /*  */
+  margin-top: 150px;
 }
 
 #mapPopup {

@@ -566,6 +566,24 @@
         .attr('transform', `translate(${scatterMargins.left / 2 - 25}, ${scatterHeightA / 2 + 30}) rotate(-90)`)
         .style("fill", "white");
 
+      // creating tooltip
+      let tooltip = scatterArea.append("g")
+                               .attr("id", "tooltipGTag")
+                               .style("visibility", "hidden")
+                              //  .style("color", "white")
+                               .attr("transform", `translate(10, 30)`)
+      // let toolDiv = tooltip.append("div")
+      //       .attr("class", "tooltipDiv")
+      //       .style("background-color", "red")
+      //       .attr("width", "100px")
+      //       .attr("height", "20px")
+      tooltip.append("text")
+             .attr("id", "tooltipText")
+             .style("font-size", "13px")
+             .style("text-align", "start")
+             .style("stroke", "white")
+             .style("color", "white");
+
       let driverWins = scatterArea.selectAll("circle.scatter")
         .data(winsYears)
         .join("circle")
@@ -578,18 +596,26 @@
           d3.select(this)
             .style("stroke", "white")
             .style("stroke-width", "1px")
+          let fNameT = populateDriverNote(d)[0];
+          let lNameT = populateDriverNote(d)[1];
+          tooltip.attr("transform",`translate(${yearScale(d.years) + scatterMargins.left}, ${winScale(d.wins) - 10})`)
+          tooltip.style("visibility", "visible")
+          document.getElementById("tooltipText").textContent = `${fNameT} ${lNameT}`;
+          tooltip.raise();
         })
+
         .on("mouseout", function (event, d) {
           d3.select(this)
             .style("stroke", "none")
             .style("stroke-width", "0px")
+          tooltip.style("visiblity", "hidden");
         })
         .on("click", function (event, d) {
           d3.select(this);
           populateDriverNote(d);
         })
         .style("fill", "#c70c0c");
-
+            
       function populateDriverNote(driverObject) {
         let driverRefTemp = driverObject.driverRef;
         let fName = "";
@@ -602,7 +628,8 @@
         });
         document.getElementById("driverName").textContent = `${fName} ${lName}`;
         document.getElementById("driverYears").textContent = `${driverObject.years} years`;
-        document.getElementById("driverWins").textContent = `${driverObject.wins}`;
+        document.getElementById("driverWins").textContent = `${driverObject.wins}`
+        return [fName, lName];
       }
 
 
