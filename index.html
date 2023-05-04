@@ -177,6 +177,9 @@
       const winData = await d3.csv("first_place_instances.csv", d3.autoType);
       console.log("wins", winData);
 
+      const driverData = await d3.csv("data/drivers.csv", d3.autoType);
+      console.log("drivers", driverData);
+
       // This CSV has all the info about every previous circuit, some of which are not currently active but all should have data from the past [this is literally just the list of circuits, not connected w anything else]
       const circuits = await d3.csv("data/circuits.csv", d3.autoType);
       console.log("circuits", circuits);
@@ -588,7 +591,16 @@
         .style("fill", "#c70c0c");
 
       function populateDriverNote(driverObject) {
-        document.getElementById("driverName").textContent = `${driverObject.driverRef}`;
+        let driverRefTemp = driverObject.driverRef;
+        let fName = "";
+        let lName = "";
+        driverData.forEach(d => {
+          if (d.driverRef === driverRefTemp) {
+            fName = d.forename;
+            lName = d.surname;
+          }
+        });
+        document.getElementById("driverName").textContent = `${fName} ${lName}`;
         document.getElementById("driverYears").textContent = `${driverObject.years} years`;
         document.getElementById("driverWins").textContent = `${driverObject.wins}`;
       }
