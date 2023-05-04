@@ -5,6 +5,8 @@
   <title>A Guide To F1</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://d3js.org/topojson.v3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-geo-projection@4"></script>
+
   <link rel="icon" type="image/x-icon" href="/images/f1.png">
 
   <link rel="stylesheet" type="text/css" href="styles/site.css">
@@ -205,7 +207,7 @@
       let countryMesh = topojson.mesh(atlasData, atlasData.objects.countries1);
       let countries = topojson.feature(atlasData, atlasData.objects.countries1);
 
-      var projection = d3.geoMercator().fitSize([mapWidth, mapHeight], countries);
+      var projection = d3.geoNaturalEarth2().fitSize([mapWidth, mapHeight], countries);
       var path = d3.geoPath().projection(projection);
 
       viewport.selectAll("path.country")
@@ -315,6 +317,42 @@
           generateLineChart([])
         }
       }
+
+      // ****** this is where i am attempting to put images in these g tags
+      //  the g tags work but the images wont show up .. ive tried using div background-img, object element and just regular img LOL
+
+      // let circuitTags = viewport.selectAll("g.circuit")
+      //   .data(circuits)
+      //   .join("g")
+      //   .attr("class", "circuit")
+      //   .attr("transform", d => `translate(${projection([d.lng, d.lat])[0]},${projection([d.lng, d.lat])[1]})`)
+      //   .on("mouseover", function (event, d) {
+      //   d3.select(this)
+      //     .style("stroke", "white")
+      //     .style("stroke-width", "1px")
+      //   })
+      //   .on("mouseout", function (event, d) {
+      //     d3.select(this)
+      //       .style("stroke", "none")
+      //       .style("stroke-width", "0px")
+      //   })
+      //   .on("click", function (event, d) {
+      //     d3.select(this);
+      //     // console.log(this);
+      //     document.getElementById("lineBlank").textContent = `${d.name}`;
+      //     lapTimeLine(d);
+      //     populateCircuitNote(d);
+      //     populateBarChartNote(d);
+      //     generateBarChart(d);
+      //   });
+
+      // let imgTemp = circuitTags.append("img")
+      //           .attr("class", "wheel")
+      //           .attr("src", "images/pirellired.png")
+      //           .attr("width", "30px")
+      //           .attr("height", "30px");
+      // imgTemp.raise();
+
 
       let circuitDots = viewport.selectAll("circle.circuit")
         .data(circuits)
