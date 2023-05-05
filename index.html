@@ -14,7 +14,16 @@
 
 
 <body>
-  <h1>A Guide to F1</h1>
+  <div id="intro">
+    <div id="title-descr">
+      <img id="main-logo" src="images/logo-red.png" alt="A Guide to Formula 1" width="500px">
+      <img id="descr" src="images/description-1.png" alt="An introductory guide to the high-speed motorsport" width="300px">
+    </div>  
+    <!-- Image sourced from https://www.clipartmax.com/middle/m2K9A0m2G6m2Z5N4_free-vector-formula-one-car-clip-art-formula-1-clipart/ -->
+    <img src="images/red-front.png" alt="Red Formula 1 car" width="800px">
+
+  </div>
+  
   <div id="map">
     <div id="mapAnnotations">
       <div id="mapText">What is F1? The fast paced motorsport, <strong>Formula 1</strong>, has been around since 1950.
@@ -190,23 +199,6 @@
       console.log("drivers", driverData);
 
       const nationalityConvert = await d3.csv("data/countries_nationality.csv", d3.autoType);
-      // const countryAbbrev = await d3.csv("country_data/countries.csv", d3.autoType);
-
-      let nationalities = [];
-      driverData.forEach(d => {
-        nationalities.push(d.nationality);
-      })
-      nationalityUnique = Array.from(new Set(nationalities));
-      let abbrev = [];
-      nationalityUnique.forEach(e => {
-        nationalityConvert.forEach(d => {
-          if (e === d.nationality) {
-            abbrev.push(d.alpha_2_code);
-          }
-        });
-      });
-      console.log("codes", abbrev);
-      console.log("nationality", nationalityUnique);
 
       // This CSV has all the info about every previous circuit, some of which are not currently active but all should have data from the past [this is literally just the list of circuits, not connected w anything else]
       const circuits = await d3.csv("data/circuits.csv", d3.autoType);

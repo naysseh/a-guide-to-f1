@@ -8,6 +8,25 @@ text {
   color: white !important;
 }
 
+div#intro {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 500px;
+}
+
+div#title-descr {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+img#descr {
+  margin-top: 20px;
+}
+
 div#map {
   display: flex;
   flex-direction: row;
