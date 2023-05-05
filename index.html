@@ -459,34 +459,68 @@
       //           .attr("height", "30px");
       // imgTemp.raise();
 
-
+      let mapTooltip = viewport.append("g")
+                             .attr("id", "mapTooltipG")
+                             .style("visibility", "hidden")
+                             .attr("transform", `translate(10, 30)`);
+      mapTooltip.append("text")
+                .attr("id", "mapTooltipText")
+                .style("font-size", "13px")
+                .style("text-align", "start")
+                // .style("stroke", "white")
+                .style("color", "white");
+      
       let circuitDots = viewport.selectAll("circle.circuit")
-        .data(circuits)
-        .join("circle")
-        .attr("class", "circuit")
-        .attr("cx", d => projection([d.lng, d.lat])[0])
-        .attr("cy", d => projection([d.lng, d.lat])[1])
-        .attr("r", "3px")
-        .style("fill", "#c70c0c")
-        .on("mouseover", function (event, d) {
-          d3.select(this)
-            .style("stroke", "white")
-            .style("stroke-width", "1px")
-        })
-        .on("mouseout", function (event, d) {
-          d3.select(this)
-            .style("stroke", "none")
-            .style("stroke-width", "0px")
-        })
-        .on("click", function (event, d) {
-          d3.select(this);
-          // console.log(this);
-          document.getElementById("lineBlank").textContent = `${d.name}`;
-          lapTimeLine(d);
-          populateCircuitNote(d);
-          populateBarChartNote(d);
-          generateBarChart(d);
-        });
+          .data(circuits)
+          .join("circle")
+          .attr("class", "circuit")
+          .attr("cx", d => projection([d.lng, d.lat])[0])
+          .attr("cy", d => projection([d.lng, d.lat])[1])
+          .attr("r", "3px")
+          .style("fill", "#c70c0c")
+          .on("mouseover", function (event, d) {
+            d3.select(this)
+              .style("stroke", "white")
+              .style("stroke-width", "1px")
+            mapTooltip.attr("transform", `translate(${projection([d.lng, d.lat])[0] + 3}, ${projection([d.lng, d.lat])[1] - 10})`)
+                      .style("visibility", "visible")
+            document.getElementById("mapTooltipText").textContent = `${d.name}`;
+            mapTooltip.raise();
+          })
+          .on("mouseout", function (event, d) {
+            d3.select(this)
+              .style("stroke", "none")
+              .style("stroke-width", "0px")
+            // mapTooltip.style("visiblity", "hidden");
+            document.getElementById("mapTooltipG").style.visibility = "hidden";
+
+          })
+          .on("click", function (event, d) {
+            d3.select(this);
+            document.getElementById("lineBlank").textContent = `${d.name}`;
+            lapTimeLine(d);
+            populateCircuitNote(d);
+            populateBarChartNote(d);
+            generateBarChart(d);
+          });
+        // let tooltip = scatterArea.append("g")
+        //                        .attr("id", "tooltipGTag")
+        //                        .style("visibility", "hidden")
+        //                       //  .style("color", "white")
+        //                        .attr("transform", `translate(10, 30)`)
+
+        // tooltip.append("text")
+        //      .attr("id", "tooltipText")
+        //      .style("font-size", "13px")
+        //      .style("text-align", "start")
+        //      .style("stroke", "white")
+        //      .style("color", "white");
+
+        // tooltip.attr("transform",`translate(${yearScale(d.years) + scatterMargins.left}, ${winScale(d.wins) - 10})`)
+        //   tooltip.style("visibility", "visible")
+        //   document.getElementById("tooltipText").textContent = `${fNameT} ${lNameT}`;
+        //   tooltip.raise();
+
 
       function populateCircuitNote(circuitObject) {
         document.getElementById("circuitName").textContent = `${circuitObject.name}`;
