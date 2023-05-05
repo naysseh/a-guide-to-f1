@@ -73,12 +73,12 @@ div#car-and-points {
 }
 
 .car-popup {
-  /* visibility: hidden; */
   position: absolute;
   padding: 4px;
   width: 160px;
   height: 130px;
   border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.506);
   line-height: 60%;
 }
 
@@ -94,6 +94,8 @@ div#car-and-points {
 
 #circle-1-div {
   visibility: hidden;
+  top: -60px;
+  left: 50px;
 }
 
 #circle-2 {
@@ -103,6 +105,8 @@ div#car-and-points {
 
 #circle-2-div {
   visibility: hidden;
+  top: 190px;
+  left: 180px;
 }
 
 #circle-3 {
@@ -112,6 +116,8 @@ div#car-and-points {
 
 #circle-3-div {
   visibility: hidden;
+  top: -80px;
+  left: 310px;
 }
 
 #circle-4 {
@@ -121,6 +127,8 @@ div#car-and-points {
 
 #circle-4-div {
   visibility: hidden;
+  top: 150px;
+  left: 540px;
 }
 
 #circle-5 {
@@ -130,6 +138,8 @@ div#car-and-points {
 
 #circle-5-div {
   visibility: hidden;
+  top: -80px;
+  left: 420px;
 }
 /* end: circles on the car image */
 
