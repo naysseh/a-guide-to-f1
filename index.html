@@ -465,10 +465,11 @@
                              .attr("transform", `translate(10, 30)`);
       mapTooltip.append("text")
                 .attr("id", "mapTooltipText")
-                .style("font-size", "13px")
+                .style("font-size", "10px")
                 .style("text-align", "start")
-                // .style("stroke", "white")
-                .style("color", "white");
+                .style("fill", "white")
+                .raise();
+
       
       let circuitDots = viewport.selectAll("circle.circuit")
           .data(circuits)
@@ -482,7 +483,7 @@
             d3.select(this)
               .style("stroke", "white")
               .style("stroke-width", "1px")
-            mapTooltip.attr("transform", `translate(${projection([d.lng, d.lat])[0] + 3}, ${projection([d.lng, d.lat])[1] - 10})`)
+            mapTooltip.attr("transform", `translate(${projection([d.lng, d.lat])[0] + 3}, ${projection([d.lng, d.lat])[1] - 5})`)
                       .style("visibility", "visible")
             document.getElementById("mapTooltipText").textContent = `${d.name}`;
             mapTooltip.raise();
@@ -491,7 +492,6 @@
             d3.select(this)
               .style("stroke", "none")
               .style("stroke-width", "0px")
-            // mapTooltip.style("visiblity", "hidden");
             document.getElementById("mapTooltipG").style.visibility = "hidden";
 
           })
@@ -503,24 +503,6 @@
             populateBarChartNote(d);
             generateBarChart(d);
           });
-        // let tooltip = scatterArea.append("g")
-        //                        .attr("id", "tooltipGTag")
-        //                        .style("visibility", "hidden")
-        //                       //  .style("color", "white")
-        //                        .attr("transform", `translate(10, 30)`)
-
-        // tooltip.append("text")
-        //      .attr("id", "tooltipText")
-        //      .style("font-size", "13px")
-        //      .style("text-align", "start")
-        //      .style("stroke", "white")
-        //      .style("color", "white");
-
-        // tooltip.attr("transform",`translate(${yearScale(d.years) + scatterMargins.left}, ${winScale(d.wins) - 10})`)
-        //   tooltip.style("visibility", "visible")
-        //   document.getElementById("tooltipText").textContent = `${fNameT} ${lNameT}`;
-        //   tooltip.raise();
-
 
       function populateCircuitNote(circuitObject) {
         document.getElementById("circuitName").textContent = `${circuitObject.name}`;
@@ -708,19 +690,12 @@
       let tooltip = scatterArea.append("g")
                                .attr("id", "tooltipGTag")
                                .style("visibility", "hidden")
-                              //  .style("color", "white")
                                .attr("transform", `translate(10, 30)`)
-      // let toolDiv = tooltip.append("div")
-      //       .attr("class", "tooltipDiv")
-      //       .style("background-color", "red")
-      //       .attr("width", "100px")
-      //       .attr("height", "20px")
       tooltip.append("text")
              .attr("id", "tooltipText")
              .style("font-size", "13px")
              .style("text-align", "start")
-             .style("stroke", "white")
-             .style("color", "white");
+             .style("fill", "white");
 
       let driverWins = scatterArea.selectAll("circle.scatter")
         .data(winsYears)
@@ -741,12 +716,10 @@
           document.getElementById("tooltipText").textContent = `${fNameT} ${lNameT}`;
           tooltip.raise();
         })
-
         .on("mouseout", function (event, d) {
           d3.select(this)
             .style("stroke", "none")
-            .style("stroke-width", "0px")
-          tooltip.style("visiblity", "hidden");
+            .style("stroke-width", "0px");
         })
         .on("click", function (event, d) {
           d3.select(this);

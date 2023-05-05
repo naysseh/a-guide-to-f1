@@ -204,6 +204,11 @@ div#map {
   height: 80px;
   width: 400px;
 }
+/* 
+#mapTooltipG {
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.908);
+} */
 
 #driverYearStats {
   border: 2px solid white;
