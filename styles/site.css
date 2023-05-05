@@ -65,6 +65,12 @@ div#car-info {
   justify-content: space-between;
 }
 
+div#car-description {
+  margin-top: 10px;
+  margin-left: 8px;
+  margin-right: 10px;
+}
+
 div#car-and-points {
   position: relative;
 }
@@ -81,15 +87,22 @@ div#car-and-points {
 .car-popup {
   position: absolute;
   padding: 4px;
-  width: 160px;
+  width: 180px;
   height: 130px;
   border: 1px solid white;
   background-color: rgba(0, 0, 0, 0.506);
-  line-height: 60%;
+  line-height: 80%;
 }
 
-.car-popup text {
+.car-popup p {
+  margin: 0px;
   font-size: 11px;
+}
+
+.car-popup p:first-child {
+  text-align: center; 
+  font-weight: bold;
+  margin-bottom: 2px;
 }
 
 /* start: circles on the car image */
@@ -145,7 +158,7 @@ div#car-and-points {
 #circle-5-div {
   visibility: hidden;
   top: -80px;
-  left: 420px;
+  left: 400px;
 }
 /* end: circles on the car image */
 
