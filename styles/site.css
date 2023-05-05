@@ -22,7 +22,15 @@ div#map {
 }
 
 #driverYearStats {
-  width: 400px;
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#flagDiv {
+  margin-right: 5px;
+  margin-top: 3px;
 }
 
 #scatterAnnotations {

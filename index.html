@@ -38,6 +38,8 @@
   </div>
   <div class="bar-chart-area" id="barChartArea">
     <div class="bar-desc">Who's been winning the <span id="circuitBlank">_____</span> race? <br>
+      <br>
+      <span id="barDescText">Click on a circuit on the map above to begin.</span>
       <button id="next2" onclick="next2()">View Next &#9660;</button>
     </div>
 
@@ -59,8 +61,9 @@
       <div id="scatterText">Does length of career correlate with success in F1? Yes, but not necessarily. A few notable
         drivers such as Lewis Hamilton, Alain Prost, and Ayrton Senna have scored big in their careers, despite none of
         them having been driving the longest. </div>
-
+      
       <div id="driverYearStats">
+        <div>
         <h3 class="popupTitle">DRIVER INFO:</h3>
         <text>Driver:</text>
         <text id="driverName"></text>
@@ -70,7 +73,13 @@
         <br>
         <text>Win count:</text>
         <text id="driverWins"></text>
+        </div>
+        <div id="flagDiv">
+          <img id="nationality" src="" alt="">
+        </div>
       </div>
+      
+
       <button id="top" onclick="topScroll()">Back to Top &#9650;</button>
     </div>
     <svg id="scatter" height="500" width="900"></svg>
@@ -179,6 +188,25 @@
 
       const driverData = await d3.csv("data/drivers.csv", d3.autoType);
       console.log("drivers", driverData);
+
+      const nationalityConvert = await d3.csv("data/countries_nationality.csv", d3.autoType);
+      // const countryAbbrev = await d3.csv("country_data/countries.csv", d3.autoType);
+
+      let nationalities = [];
+      driverData.forEach(d => {
+        nationalities.push(d.nationality);
+      })
+      nationalityUnique = Array.from(new Set(nationalities));
+      let abbrev = [];
+      nationalityUnique.forEach(e => {
+        nationalityConvert.forEach(d => {
+          if (e === d.nationality) {
+            abbrev.push(d.alpha_2_code);
+          }
+        });
+      });
+      console.log("codes", abbrev);
+      console.log("nationality", nationalityUnique);
 
       // This CSV has all the info about every previous circuit, some of which are not currently active but all should have data from the past [this is literally just the list of circuits, not connected w anything else]
       const circuits = await d3.csv("data/circuits.csv", d3.autoType);
@@ -392,6 +420,7 @@
 
       function populateBarChartNote(circuitObject) {
         document.getElementById("circuitBlank").textContent = `${circuitObject.name}`;
+        document.getElementById("barDescText").textContent = "";
       }
 
       // bar chart
@@ -620,15 +649,29 @@
         let driverRefTemp = driverObject.driverRef;
         let fName = "";
         let lName = "";
+        let nationality = "";
         driverData.forEach(d => {
           if (d.driverRef === driverRefTemp) {
             fName = d.forename;
             lName = d.surname;
+            nationality = d.nationality;
           }
         });
+        let flagUrl = "";
+        let tempCountry = "";
+        nationalityConvert.forEach(n => {
+          if (nationality === n.nationality) {
+            tempCountry = n.alpha_2_code;
+          }
+        });
+        tempCountry = tempCountry.toLowerCase();
+
         document.getElementById("driverName").textContent = `${fName} ${lName}`;
         document.getElementById("driverYears").textContent = `${driverObject.years} years`;
         document.getElementById("driverWins").textContent = `${driverObject.wins}`
+        if (tempCountry != "") {
+          document.getElementById("nationality").setAttribute("src", `images/flags/${tempCountry}.png`);
+        }
         return [fName, lName];
       }
 
