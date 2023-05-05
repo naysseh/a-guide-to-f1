@@ -31,12 +31,16 @@ div.scroll-bounce p {
 }
 
 div#intro {
-  margin-top: 80px;
+  /* margin-top: 5%;
+  margin-bottom: 5%; */
+  margin-left: 8%;
+  margin-right: 8%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 500px;
+  /* height: 500px; */
+  height: 90vh
 }
 
 div#title-descr {
@@ -50,11 +54,13 @@ img#descr {
 }
 
 div#car-info {
-  margin-top: 100px;
-  margin-left: 20px;
-  margin-bottom: 50px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 8%;
+  margin-right: 8%;
   display: flex;
   flex-direction: row;
+  height: 90vh;
   align-items: center;
   justify-content: space-between;
 }
@@ -159,7 +165,11 @@ div#map {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin-left: 20px;
+  margin-top: 5%;
+  height: 100%;
+  /* margin-bottom: 5%; */
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 #scatterText {
@@ -185,7 +195,7 @@ div#map {
 }
 
 #mapAnnotations {
-  margin-top: 150px;
+  margin-top: 5%;
 }
 
 #mapPopup {
@@ -229,11 +239,13 @@ h3.popupTitle {
 div#lineChartArea,
 .bar-chart-area,
 div#scatterArea {
-  margin-left: 20px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 6%;  
+  padding-right: 6%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 50px;
 }
 
 div#lineText {
@@ -247,7 +259,7 @@ div#lineText {
 }
 
 .bar-chart-area {
-  margin-top: 50px;
+  /* padding-top: 50px; */
 }
 
 button {
