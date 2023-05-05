@@ -8,6 +8,28 @@ text {
   color: white !important;
 }
 
+div.scroll-bounce {
+  font-weight: bold;
+  animation: bounce 2s infinite;
+  position: relative;
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 5px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+div.scroll-bounce p {
+  text-align: center;
+}
+
 div#intro {
   margin-top: 80px;
   display: flex;
