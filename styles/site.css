@@ -65,6 +65,10 @@ div#car-info {
   justify-content: space-between;
 }
 
+#lineBlank{
+  font-weight: bold;
+}
+
 div#car-description {
   margin-top: 10px;
   margin-left: 8px;

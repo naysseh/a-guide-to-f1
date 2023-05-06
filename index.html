@@ -160,7 +160,7 @@
     const lineChart = d3.select("svg#lineChart");
     const lineHeight = lineChart.attr("height");
     const lineWidth = lineChart.attr("width");
-    const lineMargins = { top: 10, right: 20, bottom: 30, left: 50 };
+    const lineMargins = { top: 10, right: 50, bottom: 30, left: 50 };
     const lineGraphHeight = lineHeight - lineMargins.top - lineMargins.bottom
     const lineGraphWidth = lineWidth - lineMargins.right - lineMargins.left
     let lineAnnotations = lineChart.append("g").attr("id", "line-annotations");
@@ -176,7 +176,8 @@
     let leftGridlinesLine = d3.axisLeft(yScaleLine)
       .tickSize(-lineGraphWidth - 10)
       .tickFormat(function (d) {
-        return d3.timeFormat('%M min %S sec')(d)
+        return Math.round((d/1000)/60) + " min " + +((d/1000)%60).toFixed(1) + " sec"
+        // return d3.timeFormat('%M min %S sec')(d)
       })
     lineChartArea.append("g")
       .attr("class", "yAxisLine y axis")
@@ -300,7 +301,7 @@
       const fastestLaps = await d3.csv("races_fastest_times.csv", d3.autoType);
       console.log("fastest laps in race", fastestLaps);
 
-      generateLineChart([])
+      // generateLineChart([])
       racesNcircuits = {}
       races.forEach(d => {
         cId = d.circuitId
@@ -370,7 +371,7 @@
         let timeExtent = d3.extent(values)
 
         xScaleLine.domain([yearsExtent[0], Number(yearsExtent[1]) + .9]);
-        yScaleLine.domain([timeExtent[0], timeExtent[1] + 1000]);
+        yScaleLine.domain([timeExtent[0]-1000, timeExtent[1] + 1000]);
 
         lineChartArea.selectAll(".xAxisLine").transition()
           .duration(transitionTime)
@@ -387,12 +388,12 @@
           .call(leftGridlinesLine);
 
         var lineGen = d3.line()
-          .x(d => xScaleLine(Number(d)))
-          .y(d => yScaleLine(Number(dataDict[d])))
-          .curve(d3.curveMonotoneX);
+          .x(d => xScaleLine(d))
+          .y(d => yScaleLine(dataDict[d]))
+          // .curve(d3.curveMonotoneX);
 
         const line = lineChartArea.selectAll(".lineSpeed")
-          .data([Object.keys(dataDict)], function (d) { return d });
+          .data([keys], function (d) { return d });
 
         line
           .join("path")
@@ -405,7 +406,69 @@
           .attr("stroke", "#c70c0c")
           .attr("stroke-width", 3);
 
-      }
+        let activeArea = lineChartArea.append("g");
+        let dropLine = activeArea.append("line")
+          .attr("id", "dropLine")
+          .attr("fill", "none")
+          .attr("stroke", "blue")
+          .attr("stroke-width", 2)
+          .attr("y1", 0)
+          .attr("y2", lineGraphHeight)
+          .attr("visibility", "hidden");
+
+        let label = activeArea.append("text")
+          .attr("id", "label")
+          .attr("visibility", "hidden");
+
+        let activeRegion = activeArea.append("rect")
+          .attr("id", "activeRegion")
+          .attr("width", lineGraphWidth)
+          .attr("height", lineGraphHeight)
+          .attr("fill", "none")
+          .attr("pointer-events", "all");
+
+        activeRegion.on('mouseover', function () {
+          if (dataDict.length != 0){
+            dropLine.attr('visibility', '');
+            label.attr('visibility', '');
+          }
+        });
+
+        activeRegion.on('mouseout', function () {
+          dropLine.attr('visibility', 'hidden');
+          label.attr('visibility', 'hidden');
+        });
+
+       let bisect = d3.bisector((d) => d).left;
+
+      activeRegion.on('mousemove', function (evt) {
+        // Get mouse location
+        let location = d3.pointer(evt);
+        let x = location[0];
+        // Use "invert" on a scale to go from pixels back to data
+        let xYear = xScaleLine.invert(x);
+        console.log(keys)
+        // We use the bisector to find the index of the element that's closest to our xYear
+        let index = bisect(keys, xYear);
+        console.log(x, xYear, index)
+        // We can then get d, the data point that's closest
+        let d = Number(values[index-1]);
+        // From there, it's just a matter of updating positions using our scales like we've done for a while now
+        let xPos = xScaleLine(keys[index-1]);
+        let yPos = yScaleLine(values[index-1]);
+        console.log(d, xPos, d3.timeFormat('%M min %S sec')(d), Math.round((d/1000)/60) + " min " + ((d/1000)%60).toFixed(2) + " sec")
+
+        dropLine.attr('x1', xPos+50).attr('x2', xPos+50);
+        // valueMarker.attr("cx",xPos).attr("cy",yPos);
+
+      label
+        .attr('x', xPos )
+        .attr('y', yPos)
+        .style('fill', 'white')
+        .text(Math.round((d/1000)/60) + " min " + ((d/1000)%60).toFixed(2) + " sec");
+      })
+    }
+    
 
       function lapTimeLine(circuitData) {
         console.log(circuitData);
