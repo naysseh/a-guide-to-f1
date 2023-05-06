@@ -211,6 +211,10 @@ div#map {
   margin-top: 5%;
 }
 
+div#mapAnnotations img {
+  margin-bottom: 10px;
+}
+
 #mapPopup {
   border: 2px solid white;
   margin-top: 20px;
