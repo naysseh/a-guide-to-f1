@@ -196,13 +196,13 @@ div#map {
 }
 
 #driverYearStats {
-  width: 250px;
+  width: 275px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#flagDiv {
+.flagDiv {
   margin-right: 5px;
   margin-top: 3px;
 }
@@ -235,7 +235,10 @@ div#mapAnnotations img {
   border: 2px solid white;
   margin-top: 20px;
   height: 80px;
-  width: 400px;
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 /* 
 #mapTooltipG {

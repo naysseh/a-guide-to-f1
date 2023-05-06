@@ -33,7 +33,7 @@
         <br><br>
         With speeds up to around 220mph, there is a heavy amount of engineering that goes into managing airflow around the vehicle to keep it gliding over the ground. Each component of the car must be purposeful&#8212internal and external&#8212to achieve maximum speed and reliability.
         <br><br>
-        <strong>Mouse over the areas on the car to learn more about them.</strong>
+        <strong><em>Mouse over the areas on the car to learn more about them.</strong></em>
     </div>
     </div>
     <div id="car-and-points">
@@ -74,15 +74,22 @@
         With historical top speeds of around 180 mph in 1950, and current top speeds at around 220 mph, the F1 car is
         not your average roadster. Cheetahs can run at up to 80 mph; the average car can likely hit 120. F1 cars are the
         fastest in the world, making the sport high energy, fast paced, and dangerous.
-
         <br><br>
-        Click on a point to view information about that circuit.
+        Note that not all displayed circuits are active. Currently active circuits are highlighted.
+        <br><br>
+        <em>Click on a point to view information about that circuit.</em>
+
       </div>
       <div id="mapPopup">
-        <h3 class="popupTitle">CIRCUIT INFO:</h3>
-        <text id="circuitName"></text>
-        <br>
-        <text id="circuitLocation"></text>
+        <div>
+          <h3 class="popupTitle">CIRCUIT INFO:</h3>
+          <text id="circuitName"></text>
+          <br>
+          <text id="circuitLocation"></text>
+        </div>
+        <div class="flagDiv">
+          <img id="teamCountry" src="" alt="">
+        </div>
       </div>
       <button id="next1" onclick="next1()">View Next &#9660;</button>
     </div>
@@ -92,7 +99,7 @@
   <div class="bar-chart-area" id="barChartArea">
     <div id="barchartAnnotations">
       <img src="images/the-teams.png" alt="The Teams" width="300px" class="imgTitle">
-      <div class="bar-desc">Who's been winning the <span id="circuitBlank">_____</span> race? <br>
+      <div class="bar-desc">Which teams are the top winners for the <span id="circuitBlank">_____</span> race? <br>
         <br>
         <span id="barDescText">Click on a circuit on the map above to begin.</span>
         <button id="next2" onclick="next2()">View Next &#9660;</button>
@@ -106,7 +113,7 @@
     <div id="linechartAnnotations">
       <img src="images/the-speed.png" alt="The Speed" width="300px" class="imgTitle">
       <div id="lineText">How have lap times changed per race? Check out previous stats from the <text
-          id="lineBlank">_____</text> race. Click on a circuit on the map to view times. <br><br> <text
+          id="lineBlank">_____</text> race. <em>Click on a circuit on the map above to view times.</em><br><br> <text
           id="lineEmpty">Here, we see the fastest lap times from that race for a certain year.
           Lap times are affected by a number of factors: tire type, fuel level,
           overall car build, track temperature, weather conditions, and other factors.</text> <br>
@@ -118,13 +125,15 @@
   <div id="scatterArea">
     <div id="scatterAnnotations">
       <img src="images/the-drivers.png" alt="The Drivers" width="300px" class="imgTitle">
-      <div id="scatterText">Does length of career correlate with success in F1? Yes, but not necessarily. A few notable
-        drivers such as Lewis Hamilton, Alain Prost, and Ayrton Senna have scored big in their careers, despite none of
-        them having been driving the longest. </div>
+      <div id="scatterText">Does length of career correlate with success in F1? Yes, but not necessarily. A few notable drivers such as Lewis Hamilton, Alain Prost, and Ayrton Senna have scored big in their careers, despite none of them having been driving the longest. 
+        <br><br>
+        <em>Hover over a point to view more information about that driver.</em>
+      
+      </div>
       
       <div id="driverYearStats">
         <div>
-        <h3 class="popupTitle">DRIVER INFO:</h3>
+        <h3 class="popupTitle">DRIVER INFO</h3>
         <text>Driver:</text>
         <text id="driverName"></text>
         <br>
@@ -134,7 +143,7 @@
         <text>Win count:</text>
         <text id="driverWins"></text>
         </div>
-        <div id="flagDiv">
+        <div class="flagDiv">
           <img id="nationality" src="" alt="">
         </div>
       </div>
@@ -555,6 +564,11 @@
           .attr("cy", d => projection([d.lng, d.lat])[1])
           .attr("r", "3px")
           .style("fill", "#c70c0c")
+          .style("stroke", d => {
+            if (d.active === 'True') {
+              return 'yellow'
+            }
+          })
           .on("mouseover", function (event, d) {
             d3.select(this)
               .style("stroke", "white")
@@ -581,6 +595,27 @@
           });
 
       function populateCircuitNote(circuitObject) {
+        let countryTemp = circuitObject.country;
+        let temp = "";
+        nationalityConvert.forEach(n => {
+          if (countryTemp === "USA") {
+              countryTemp = "United States of America";
+            } else if (countryTemp === "UAE") {
+              countryTemp = "United Arab Emirates";
+            } else if (countryTemp === "Russia") {
+              countryTemp = "Russian Federation";
+            } else if (countryTemp === "Korea") {
+              countryTemp = "Korea (Republic of)"
+            }
+          if (n.en_short_name === countryTemp) {
+            
+            temp = n.alpha_2_code; }
+          
+        });
+        temp = temp.toLowerCase();
+        if (temp != "") {
+          document.getElementById("teamCountry").setAttribute("src", `images/flags/${temp}.png`); 
+        }
         document.getElementById("circuitName").textContent = `${circuitObject.name}`;
         document.getElementById("circuitLocation").textContent = `${circuitObject.location}, ${circuitObject.country}`;
       }
