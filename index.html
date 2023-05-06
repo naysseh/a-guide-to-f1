@@ -27,7 +27,7 @@
   </div>
   <div id="car-info">
     <div id="infoAnnotations">
-      <img src="images/the-cars.png" alt="The Cars" width="300px">
+      <img src="images/the-cars.png" alt="The Cars" width="300px" class="imgTitle">
       <div id="car-description">
         The F1 car is the driver's sole tool during a race. During an average race, a driver is seated in the vehicle for around 70 laps or 1.5 hours. Drivers, via controls on their steering wheel, can speak directly to their teams and engineers to get status updates, change the brake balance, shift gears, decrease to pit lane speed, and more.
         <br><br>
@@ -69,7 +69,7 @@
   
   <div id="map">
     <div id="mapAnnotations">
-      <img src="images/the-tracks.png" alt="The Tracks" width="300px">
+      <img src="images/the-tracks.png" alt="The Tracks" width="300px" class="imgTitle">
       <div id="mapText">What is F1? The fast paced motorsport, <strong>Formula 1</strong>, has been around since 1950.
         With historical top speeds of around 180 mph in 1950, and current top speeds at around 220 mph, the F1 car is
         not your average roadster. Cheetahs can run at up to 80 mph; the average car can likely hit 120. F1 cars are the
@@ -90,27 +90,34 @@
     <svg id="map" height="900" width="900"></svg>
   </div>
   <div class="bar-chart-area" id="barChartArea">
-    <div class="bar-desc">Who's been winning the <span id="circuitBlank">_____</span> race? <br>
-      <br>
-      <span id="barDescText">Click on a circuit on the map above to begin.</span>
-      <button id="next2" onclick="next2()">View Next &#9660;</button>
+    <div id="barchartAnnotations">
+      <img src="images/the-teams.png" alt="The Teams" width="300px" class="imgTitle">
+      <div class="bar-desc">Who's been winning the <span id="circuitBlank">_____</span> race? <br>
+        <br>
+        <span id="barDescText">Click on a circuit on the map above to begin.</span>
+        <button id="next2" onclick="next2()">View Next &#9660;</button>
+      </div>
     </div>
 
     <svg id="barChart" height="500" width="800"></svg>
   </div>
 
   <div id="lineChartArea">
-    <div id="lineText">How have lap times changed per race? Check out previous stats from the <text
-        id="lineBlank">_____</text> race. Click on a circuit on the map to view times. <br><br> <text
-        id="lineEmpty">Here, we see the fastest lap times from that race for a certain year.
-        Lap times are affected by a number of factors: tire type, fuel level,
-        overall car build, track temperature, weather conditions, and other factors.</text> <br>
-      <button id="next3" onclick="next3()">View Next &#9660;</button>
+    <div id="linechartAnnotations">
+      <img src="images/the-speed.png" alt="The Speed" width="300px" class="imgTitle">
+      <div id="lineText">How have lap times changed per race? Check out previous stats from the <text
+          id="lineBlank">_____</text> race. Click on a circuit on the map to view times. <br><br> <text
+          id="lineEmpty">Here, we see the fastest lap times from that race for a certain year.
+          Lap times are affected by a number of factors: tire type, fuel level,
+          overall car build, track temperature, weather conditions, and other factors.</text> <br>
+        <button id="next3" onclick="next3()">View Next &#9660;</button>
+      </div>
     </div>
     <svg id="lineChart" height="500" width="900"></svg>
   </div>
   <div id="scatterArea">
     <div id="scatterAnnotations">
+      <img src="images/the-drivers.png" alt="The Drivers" width="300px" class="imgTitle">
       <div id="scatterText">Does length of career correlate with success in F1? Yes, but not necessarily. A few notable
         drivers such as Lewis Hamilton, Alain Prost, and Ayrton Senna have scored big in their careers, despite none of
         them having been driving the longest. </div>
