@@ -572,7 +572,7 @@
           .on("mouseover", function (event, d) {
             d3.select(this)
               .style("stroke", "white")
-              .style("stroke-width", "1px")
+              .style("stroke-width", "2px")
             mapTooltip.attr("transform", `translate(${projection([d.lng, d.lat])[0] + 3}, ${projection([d.lng, d.lat])[1] - 5})`)
                       .style("visibility", "visible")
             document.getElementById("mapTooltipText").textContent = `${d.name}`;
@@ -580,8 +580,14 @@
           })
           .on("mouseout", function (event, d) {
             d3.select(this)
-              .style("stroke", "none")
-              .style("stroke-width", "0px")
+              .style("stroke", d => {
+                if (d.active === 'True') {
+                  return 'yellow'
+                } else{
+                  return 'none'
+                }
+              })
+              .style("stroke-width", "1px")
             document.getElementById("mapTooltipG").style.visibility = "hidden";
 
           })
