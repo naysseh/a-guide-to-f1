@@ -86,6 +86,8 @@
           <text id="circuitName"></text>
           <br>
           <text id="circuitLocation"></text>
+          <br>
+          <text id="active-yes"></text>
         </div>
         <div class="flagDiv">
           <img id="teamCountry" src="" alt="">
@@ -99,9 +101,11 @@
   <div class="bar-chart-area" id="barChartArea">
     <div id="barchartAnnotations">
       <img src="images/the-teams.png" alt="The Teams" width="300px" class="imgTitle">
-      <div class="bar-desc">Which teams are the top winners for the <span id="circuitBlank">_____</span> race? <br>
+      <div class="bar-desc">Let's now look at historical win counts for teams. Throughout F1's history, there have been teams who consistently dominate: Williams, Ferrari, McLaren, Mercedes, and currently Red Bull.
+        <br><br>Here we can analyze which teams have dominated based on the circuit. Does their success depend on a circuit? It's likely that a team dominates overall, especially with a reliable car, to be successful for an entire season.<br><br>
+        Which teams are the top winners for the <span id="circuitBlank">_____</span> race? <br>
         <br>
-        <span id="barDescText">Click on a circuit on the map above to begin.</span>
+        <span id="barDescText"> <strong><em>Click on a circuit on the map above to begin.</em></strong></span>
         <button id="next2" onclick="next2()">View Next &#9660;</button>
       </div>
     </div>
@@ -135,15 +139,15 @@
       
       <div id="driverYearStats">
         <div>
-        <h3 class="popupTitle">DRIVER INFO</h3>
-        <text>Driver:</text>
-        <text id="driverName"></text>
-        <br>
-        <text>Career length:</text>
-        <text id="driverYears"></text>
-        <br>
-        <text>Win count:</text>
-        <text id="driverWins"></text>
+          <h3 class="popupTitle">DRIVER INFO</h3>
+          <text>Driver:</text>
+          <text id="driverName"></text>
+          <br>
+          <text>Career length:</text>
+          <text id="driverYears"></text>
+          <br>
+          <text>Win count:</text>
+          <text id="driverWins"></text>
         </div>
         <div class="flagDiv">
           <img id="nationality" src="" alt="">
@@ -640,6 +644,13 @@
         temp = temp.toLowerCase();
         if (temp != "") {
           document.getElementById("teamCountry").setAttribute("src", `images/flags/${temp}.png`); 
+        }
+        if (circuitObject.active === "True") {
+          document.getElementById("active-yes").style.visibility = "visible";
+          document.getElementById("active-yes").textContent = "This circuit is active for the 2023 season.";
+        } else {
+          document.getElementById("active-yes").style.visibility = "visible";
+          document.getElementById("active-yes").textContent = "This circuit is not currently active."
         }
         document.getElementById("circuitName").textContent = `${circuitObject.name}`;
         document.getElementById("circuitLocation").textContent = `${circuitObject.location}, ${circuitObject.country}`;

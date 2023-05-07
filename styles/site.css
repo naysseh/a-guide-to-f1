@@ -170,18 +170,12 @@ div#infoAnnotations {
   width: 400px;
 }
 
-div#infoAnnotations img {
-  /* margin-bottom: 10px; */
-}
-
-
 div#map {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   margin-top: 5%;
   height: 100%;
-  /* margin-bottom: 5%; */
   margin-left: 8%;
   margin-right: 8%;
 }
@@ -204,18 +198,6 @@ div#map {
   margin-top: 3px;
 }
 
-#scatterAnnotations {
-  /*  */
-}
-
-div#barchartAnnotations img {
-  /* margin-bottom: 10px; */
-}
-
-div#linechartAnnotations img {
-
-}
-
 .imgTitle {
   margin-bottom: 10px;
 }
@@ -224,24 +206,20 @@ div#linechartAnnotations img {
   margin-top: 5%;
 }
 
-div#mapAnnotations img {
-  /* margin-bottom: 10px; */
+
+#active-yes {
+  visibility: hidden;
 }
 
 #mapPopup {
   border: 2px solid white;
   margin-top: 20px;
-  height: 80px;
+  height: 100px;
   width: 350px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-/* 
-#mapTooltipG {
-  border: 1px solid white;
-  background-color: rgba(0, 0, 0, 0.908);
-} */
 
 #driverYearStats {
   border: 2px solid white;
@@ -251,18 +229,19 @@ div#mapAnnotations img {
 }
 
 h3.popupTitle {
-  margin: 8px 8px 8px 8px;
+  margin: 8px 8px 3px 8px;
 }
 
 #circuitName,
 #circuitLocation,
+#active-yes,
 #driverYearStats text {
   margin-left: 8px
 }
 
 #mapText {
   width: 400px;
-  font-size: 20px;
+  font-size: 18px;
   margin-right: 50px;
 }
 
@@ -277,12 +256,7 @@ h3.popupTitle {
 div#lineChartArea,
 .bar-chart-area,
 div#scatterArea {
-  margin-top: 200px;
-  margin-bottom: 200px;
-  /* padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 6%;  
-  padding-right: 6%; */
+  margin: 200px 80px 200px 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -296,11 +270,11 @@ div#lineText {
 
 .bar-desc {
   width: 460px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .bar-chart-area {
-  /* padding-top: 50px; */
+
 }
 
 button {
