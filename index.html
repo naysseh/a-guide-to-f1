@@ -405,7 +405,7 @@
 
         var lineGen = d3.line()
           .x(d => xScaleLine(d))
-          .y(d => yScaleLine(dataDict[d]))
+          .y(d => yScaleLine(dataDict[d])+10)
           // .curve(d3.curveMonotoneX);
 
         const line = lineChartArea.selectAll(".lineSpeed")
