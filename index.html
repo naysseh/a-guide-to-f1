@@ -430,11 +430,19 @@
         let dropLine = activeArea.append("line")
           .attr("id", "dropLine")
           .attr("fill", "none")
-          .attr("stroke", "blue")
-          .attr("stroke-width", 2)
+          .attr("stroke", "white")
+          .attr("stroke-width", 3)
           .attr("y1", 0)
           .attr("y2", lineGraphHeight)
           .attr("visibility", "hidden");
+   
+        let valueMarker = activeArea.append("circle")
+          .attr("id","valueMarker")
+          .attr("fill","none")
+          .attr("stroke","white")
+          .attr("stroke-width",2)
+          .attr("r",10)
+          .attr("visibility","hidden");
 
         let label = activeArea.append("text")
           .attr("id", "label")
@@ -451,12 +459,14 @@
           if (dataDict.length != 0){
             dropLine.attr('visibility', '');
             label.attr('visibility', '');
+            valueMarker.attr("visibility","");
           }
         });
 
         activeRegion.on('mouseout', function () {
           dropLine.attr('visibility', 'hidden');
           label.attr('visibility', 'hidden');
+          valueMarker.attr("visibility","hidden");
         });
 
         let bisect = d3.bisector((d) => d).left;
@@ -474,18 +484,29 @@
           // We can then get d, the data point that's closest
           let d = Number(values[index-1]);
           // From there, it's just a matter of updating positions using our scales like we've done for a while now
-          let xPos = xScaleLine(keys[index-1]);
-          let yPos = yScaleLine(values[index-1]);
+          let xPos = xScaleLine(keys[index-1])+50;
+          let yPos = yScaleLine(values[index-1])+10;
           console.log(d, xPos, d3.timeFormat('%M min %S sec')(d), Math.round((d/1000)/60) + " min " + ((d/1000)%60).toFixed(2) + " sec")
 
-          dropLine.attr('x1', xPos+50).attr('x2', xPos+50);
-          // valueMarker.attr("cx",xPos).attr("cy",yPos);
+          dropLine.attr('x1', xPos).attr('x2', xPos);
+          valueMarker.attr("cx",xPos).attr("cy",yPos);
 
-          label
-            .attr('x', xPos )
-            .attr('y', yPos)
-            .style('fill', 'white')
-            .text(Math.round((d/1000)/60) + " min " + ((d/1000)%60).toFixed(2) + " sec");
+          label.text(Math.round((d/1000)/60) + " min " + ((d/1000)%60).toFixed(2) + " sec")
+            .style('fill', 'white');
+            // .attr('x', xPos +10)
+            // .attr('y', lineGraphHeight-100)
+          if (xPos < lineGraphWidth / 2.0) { 
+            label.attr("x",xPos+10).attr("text-anchor","start");
+          }
+          else { 
+            label.attr("x",xPos-10).attr("text-anchor","end"); 
+          }
+          if (yPos > lineGraphHeight / 2.0) { 
+            label.attr("y",150);
+          }
+          else { 
+            label.attr("y",lineGraphHeight-100); 
+          }
         })
       }
     
