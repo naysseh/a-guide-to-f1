@@ -75,7 +75,7 @@
         not your average roadster. Cheetahs can run at up to 80 mph; the average car can likely hit 120. F1 cars are the
         fastest in the world, making the sport high energy, fast paced, and dangerous.
         <br><br>
-        Note that not all displayed circuits are active. Currently active circuits are highlighted.
+        Note that not all displayed circuits are active. Currently active circuits for the 2023 season are highlighted.
         <br><br>
         <em>Click on a point to view information about that circuit.</em>
 
@@ -94,7 +94,7 @@
       <button id="next1" onclick="next1()">View Next &#9660;</button>
     </div>
 
-    <svg id="map" height="900" width="900"></svg>
+    <svg id="map" height="700" width="900"></svg>
   </div>
   <div class="bar-chart-area" id="barChartArea">
     <div id="barchartAnnotations">
@@ -112,15 +112,17 @@
   <div id="lineChartArea">
     <div id="linechartAnnotations">
       <img src="images/the-speed.png" alt="The Speed" width="300px" class="imgTitle">
-      <div id="lineText">How have lap times changed per race? Check out previous stats from the <text
-          id="lineBlank">_____</text> race. <em>Click on a circuit on the map above to view times.</em><br><br> <text
+      <div id="lineText">
+        <span id="line-temp"><em>Click on a circuit on the map above to view times.</em></span> <br><br>
+        How have lap times changed per race? Check out previous stats from the <text
+          id="lineBlank">_____</text> race.  <br><br> <text
           id="lineEmpty">Here, we see the fastest lap times from that race for a certain year.
           Lap times are affected by a number of factors: tire type, fuel level,
           overall car build, track temperature, weather conditions, and other factors.</text> <br>
         <button id="next3" onclick="next3()">View Next &#9660;</button>
       </div>
     </div>
-    <svg id="lineChart" height="500" width="900"></svg>
+    <svg id="lineChart" height="500" width="800"></svg>
   </div>
   <div id="scatterArea">
     <div id="scatterAnnotations">
@@ -151,7 +153,7 @@
 
       <button id="top" onclick="topScroll()">Back to Top &#9650;</button>
     </div>
-    <svg id="scatter" height="500" width="900"></svg>
+    <svg id="scatter" height="500" width="700"></svg>
   </div>
 
 
@@ -353,14 +355,9 @@
         .on("zoom", zoomTransform);
 
 
-      function zoomTransform({ transform }) {
-        viewport.attr("transform", transform.toString());
-      };
-      map.call(zoom);
-      zoom.scaleTo(map, 1.4); //i set an inital zoom value for it to load on but feel free to change
-
 
       function generateLineChart(dictYearLapTime) {
+        document.getElementById("line-temp").textContent = "";
         const transitionTime = Object.keys(dictYearLapTime).length == 0 ? 0 : 3000
         document.getElementById("lineEmpty").textContent = Object.keys(dictYearLapTime).length == 0 ?
           "Here, the circuit does not have fastest lap times reported." : "Here, we see the fastest lap times from that race for a certain year. \
@@ -455,35 +452,35 @@
           label.attr('visibility', 'hidden');
         });
 
-       let bisect = d3.bisector((d) => d).left;
+        let bisect = d3.bisector((d) => d).left;
 
-      activeRegion.on('mousemove', function (evt) {
-        // Get mouse location
-        let location = d3.pointer(evt);
-        let x = location[0];
-        // Use "invert" on a scale to go from pixels back to data
-        let xYear = xScaleLine.invert(x);
-        console.log(keys)
-        // We use the bisector to find the index of the element that's closest to our xYear
-        let index = bisect(keys, xYear);
-        console.log(x, xYear, index)
-        // We can then get d, the data point that's closest
-        let d = Number(values[index-1]);
-        // From there, it's just a matter of updating positions using our scales like we've done for a while now
-        let xPos = xScaleLine(keys[index-1]);
-        let yPos = yScaleLine(values[index-1]);
-        console.log(d, xPos, d3.timeFormat('%M min %S sec')(d), Math.round((d/1000)/60) + " min " + ((d/1000)%60).toFixed(2) + " sec")
+        activeRegion.on('mousemove', function (evt) {
+          // Get mouse location
+          let location = d3.pointer(evt);
+          let x = location[0];
+          // Use "invert" on a scale to go from pixels back to data
+          let xYear = xScaleLine.invert(x);
+          console.log(keys)
+          // We use the bisector to find the index of the element that's closest to our xYear
+          let index = bisect(keys, xYear);
+          console.log(x, xYear, index)
+          // We can then get d, the data point that's closest
+          let d = Number(values[index-1]);
+          // From there, it's just a matter of updating positions using our scales like we've done for a while now
+          let xPos = xScaleLine(keys[index-1]);
+          let yPos = yScaleLine(values[index-1]);
+          console.log(d, xPos, d3.timeFormat('%M min %S sec')(d), Math.round((d/1000)/60) + " min " + ((d/1000)%60).toFixed(2) + " sec")
 
-        dropLine.attr('x1', xPos+50).attr('x2', xPos+50);
-        // valueMarker.attr("cx",xPos).attr("cy",yPos);
+          dropLine.attr('x1', xPos+50).attr('x2', xPos+50);
+          // valueMarker.attr("cx",xPos).attr("cy",yPos);
 
-      label
-        .attr('x', xPos )
-        .attr('y', yPos)
-        .style('fill', 'white')
-        .text(Math.round((d/1000)/60) + " min " + ((d/1000)%60).toFixed(2) + " sec");
-      })
-    }
+          label
+            .attr('x', xPos )
+            .attr('y', yPos)
+            .style('fill', 'white')
+            .text(Math.round((d/1000)/60) + " min " + ((d/1000)%60).toFixed(2) + " sec");
+        })
+      }
     
 
       function lapTimeLine(circuitData) {
@@ -589,7 +586,14 @@
               })
               .style("stroke-width", "1px")
             document.getElementById("mapTooltipG").style.visibility = "hidden";
-
+            let temp = d3.select(this);
+            if (d.active === 'True') {
+              return temp.style("stroke", "yellow");
+            } else {
+              temp.style("stroke-width", "0px");
+              return temp.style("stroke", "none");
+            }
+      
           })
           .on("click", function (event, d) {
             d3.select(this);
@@ -599,6 +603,21 @@
             populateBarChartNote(d);
             generateBarChart(d);
           });
+      
+      
+      function zoomTransform({ transform }) {
+        viewport.attr("transform", transform.toString());
+        // zipMeshPaths.style("stroke-width", 1/transform.k)
+        circuitDots.attr("r", 5/transform.k);
+        // function zoomFunc({transform}) {
+        //   viewport.attr("transform", transform.toString() )
+        //  
+        // }              
+
+        // svg.call(zoomGen);
+      };
+      map.call(zoom);
+      zoom.scaleTo(map, 1.4); //i set an inital zoom value for it to load on but feel free to change
 
       function populateCircuitNote(circuitObject) {
         let countryTemp = circuitObject.country;
@@ -765,8 +784,10 @@
       }
 
       // final chart - scatterplot
-      const yearExtent = d3.extent(winsYears, d => d.years); // 1 to 19
-      const winExtent = d3.extent(winsYears, d => d.wins); // 1 to 103 (some drivers have 0 but they wont be included here)
+      const yearExtent = [2,21]
+      // d3.extent(winsYears, d => d.years); // 2 to 19
+      const winExtent = [1,105]
+      // d3.extent(winsYears, d => d.wins); // 1 to 103 (some drivers have 0 but they wont be included here)
 
       //scales
       const yearScale = d3.scaleLinear()
@@ -894,7 +915,7 @@
     }
 
     function topScroll() {
-      var area = document.getElementById("map");
+      var area = document.getElementById("car-info");
       area.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   </script>
