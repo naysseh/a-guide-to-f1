@@ -292,8 +292,6 @@
   
       first_place_instances.csv: Is the same as the above one but only has a result if the result was first place (I made this specifically for the scatterplot)
 
-      first_place_counts.csv: counts wins for each driver
-  
       wins_and_years.csv: total years driven and total wins for a driver
 
       race_fastest_times.csv: fastest lap times for each race
@@ -473,6 +471,7 @@
 
         let bisect = d3.bisector((d) => d).left;
 
+        // *******************************************
         // ***********FINISH CITATIONS - AMY*********
         activeRegion.on('mousemove', function (evt) {
           // Get mouse location

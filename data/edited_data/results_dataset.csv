@@ -18041,7 +18041,7 @@
 18039,18040,744,429,99,68,0,33,0.0,\N,\N,\N,81,andre_pilette,André,Pilette,Belgian,Emeryson,1961,14,Autodromo Nazionale di Monza
 18040,18041,744,431,95,46,0,34,0.0,\N,\N,\N,54,barth,Edgar,Barth,German,Porsche,1961,14,Autodromo Nazionale di Monza
 18041,18042,744,487,167,58,0,35,0.0,\N,\N,\N,54,natili,Massimo,Natili,Italian,Cooper-Maserati,1961,14,Autodromo Nazionale di Monza
-18042,18043,744,491,170,34,0,36,0.0,\N,\N,\N,54,thiele,Alfonso,Thiele,American-Italian,Cooper-Climax,1961,14,Autodromo Nazionale di Monza
+18042,18043,744,491,170,34,0,36,0.0,\N,\N,\N,54,thiele,Alfonso,Thiele,American,Cooper-Climax,1961,14,Autodromo Nazionale di Monza
 18043,18044,744,467,172,64,0,37,0.0,\N,\N,\N,54,prinoth,Ernesto,Prinoth,Italian,Lotus-Climax,1961,14,Autodromo Nazionale di Monza
 18044,18045,744,492,170,66,0,38,0.0,\N,\N,\N,54,boffa,Menato,Boffa,Italian,Cooper-Climax,1961,14,Autodromo Nazionale di Monza
 18045,18046,744,480,172,70,0,39,0.0,\N,\N,\N,54,may,Michael,May,Swiss,Lotus-Climax,1961,14,Autodromo Nazionale di Monza
@@ -18258,7 +18258,7 @@
 18256,18257,754,455,170,10,13,9,0.0,\N,\N,\N,16,seidel,Wolfgang,Seidel,German,Cooper-Climax,1960,14,Autodromo Nazionale di Monza
 18257,18258,754,545,104,28,14,10,0.0,\N,\N,\N,19,gamble,Fred,Gamble,American,Behra-Porsche,1960,14,Autodromo Nazionale di Monza
 18258,18259,754,484,101,6,7,11,0.0,\N,\N,\N,6,naylor,Brian,Naylor,British,JBW,1960,14,Autodromo Nazionale di Monza
-18259,18260,754,491,167,34,9,12,0.0,\N,\N,\N,6,thiele,Alfonso,Thiele,American-Italian,Cooper-Maserati,1960,14,Autodromo Nazionale di Monza
+18259,18260,754,491,167,34,9,12,0.0,\N,\N,\N,6,thiele,Alfonso,Thiele,American,Cooper-Maserati,1960,14,Autodromo Nazionale di Monza
 18260,18261,754,500,171,4,8,13,0.0,\N,\N,\N,5,munaron,Gino,Munaron,Italian,Cooper-Castellotti,1960,14,Autodromo Nazionale di Monza
 18261,18262,754,483,167,36,5,14,0.0,\N,\N,\N,5,scarlatti,Giorgio,Scarlatti,Italian,Cooper-Maserati,1960,14,Autodromo Nazionale di Monza
 18262,18263,754,398,170,30,16,15,0.0,\N,\N,\N,5,vic_wilson,Vic,Wilson,British,Cooper-Climax,1960,14,Autodromo Nazionale di Monza
@@ -18473,7 +18473,7 @@
 18471,18472,764,477,6,3,11,8,0.0,\N,\N,\N,7,allison,Cliff,Allison,British,Ferrari,1959,63,Sebring International Raceway
 18472,18473,764,456,167,12,11,9,0.0,\N,\N,\N,7,salvadori,Roy,Salvadori,British,Cooper-Maserati,1959,63,Sebring International Raceway
 18473,18474,764,449,113,1,19,10,0.0,\N,\N,\N,8,ward,Rodger,Ward,American,Kurtis Kraft,1959,63,Sebring International Raceway
-18474,18475,764,573,168,14,14,11,0.0,\N,\N,\N,23,tomaso,Alessandro,de Tomaso,Argentine-Italian,Cooper-OSCA,1959,63,Sebring International Raceway
+18474,18475,764,573,168,14,14,11,0.0,\N,\N,\N,23,tomaso,Alessandro,de Tomaso,Argentine,Cooper-OSCA,1959,63,Sebring International Raceway
 18475,18476,764,403,6,5,8,12,0.0,\N,\N,\N,8,phil_hill,Phil,Hill,American,Ferrari,1959,63,Sebring International Raceway
 18476,18477,764,567,124,15,17,13,0.0,\N,\N,\N,44,orey,Fritz,d'Orey,Brazilian,Tec-Mec,1959,63,Sebring International Raceway
 18477,18478,764,475,170,7,1,14,0.0,\N,\N,\N,7,moss,Stirling,Moss,British,Cooper-Climax,1959,63,Sebring International Raceway
@@ -18729,7 +18729,7 @@
 18727,18728,776,607,6,18,11,6,0.0,\N,\N,\N,12,perdisa,Cesare,Perdisa,Italian,Ferrari,1957,25,Autódromo Juan y Oscar Gálvez
 18728,18729,776,347,105,24,13,7,0.0,\N,\N,\N,15,bonnier,Jo,Bonnier,Swedish,Maserati,1957,25,Autódromo Juan y Oscar Gálvez
 18729,18730,776,475,105,4,1,8,1.0,\N,\N,\N,17,moss,Stirling,Moss,British,Maserati,1957,25,Autódromo Juan y Oscar Gálvez
-18730,18731,776,573,6,26,12,9,0.0,\N,\N,\N,19,tomaso,Alessandro,de Tomaso,Argentine-Italian,Ferrari,1957,25,Autódromo Juan y Oscar Gálvez
+18730,18731,776,573,6,26,12,9,0.0,\N,\N,\N,19,tomaso,Alessandro,de Tomaso,Argentine,Ferrari,1957,25,Autódromo Juan y Oscar Gálvez
 18731,18732,776,586,105,28,14,10,0.0,\N,\N,\N,88,piotti,Luigi,Piotti,Italian,Maserati,1957,25,Autódromo Juan y Oscar Gálvez
 18732,18733,776,608,6,14,4,11,0.0,\N,\N,\N,36,castellotti,Eugenio,Castellotti,Italian,Ferrari,1957,25,Autódromo Juan y Oscar Gálvez
 18733,18734,776,578,6,16,7,12,0.0,\N,\N,\N,8,hawthorn,Mike,Hawthorn,British,Ferrari,1957,25,Autódromo Juan y Oscar Gálvez
