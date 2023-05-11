@@ -1,3 +1,5 @@
+// ******* EXTERNAL FUNCTION *****: createDropLine
+// Credit to Prof. Jeff Rzeszotarski, taken from Lecture on September 29, 2021 (INFO 3300).
 function createDropLine(
   activeRegion,
   dropLine,
