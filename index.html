@@ -282,51 +282,56 @@
     // End - the car section
 
     /*
-      The data files setup (by Natasha) <3 (i figured id put this here so we can go back to it while we work if needed)
+      The data files setup (by Natasha) <3 
   
-      The ones inside the /data folder are all the original, unchanged files. In jupyter though I made some new ones which are in the root directory:
+      The ones inside the /data/kaggle_data/ folder are all the original, unchanged files from Kaggle.
+      
+      Then the files that were made by preprocessing in Jupyter, stored in data/edited_data/:
   
-      results_dataset.csv: This is a merge on the initial results csv (it's best to look at it) which has results for lap times, final position, etc., for every race result in the past. The nice part about this set is that it contains the driver values separate from the teams (because many drivers drive for more than 1 team during their lifetime). basically everything is in here you just might have to map/loop on it
+      results_dataset.csv: This is a merge on the initial results csv (it's best to look at it) which has results for lap times, final position, etc., for every race result in the past. It contains the driver values separate from the teams (because many drivers drive for more than 1 team during their lifetime). Everything is in here you just might have to map/loop on it
   
       first_place_instances.csv: Is the same as the above one but only has a result if the result was first place (I made this specifically for the scatterplot)
+
+      first_place_counts.csv: counts wins for each driver
   
       wins_and_years.csv: total years driven and total wins for a driver
+
+      race_fastest_times.csv: fastest lap times for each race
     */
 
 
     const requestData = async function () {
-      const combinedData = await d3.csv("results_dataset.csv", d3.autoType);
+      const combinedData = await d3.csv("data/edited_data/results_dataset.csv", d3.autoType);
       console.log("all data", combinedData);
 
-      const atlasData = await d3.json("world-countries.json");
+      const atlasData = await d3.json("data/world-countries.json");
       console.log(atlasData);
 
-      const winsYears = await d3.csv("wins_and_years.csv", d3.autoType);
+      const winsYears = await d3.csv("data/edited_data/wins_and_years.csv", d3.autoType);
       console.log("win and years", winsYears);
 
-      const constructorData = await d3.csv("data/constructors.csv", d3.autoType);
+      const constructorData = await d3.csv("data/kaggle_data/constructors.csv", d3.autoType);
       console.log("constructors", constructorData);
 
-      const winData = await d3.csv("first_place_instances.csv", d3.autoType);
+      const winData = await d3.csv("data/edited_data/first_place_instances.csv", d3.autoType);
       console.log("wins", winData);
 
-      const driverData = await d3.csv("data/drivers.csv", d3.autoType);
+      const driverData = await d3.csv("data/kaggle_data/drivers.csv", d3.autoType);
       console.log("drivers", driverData);
 
       const nationalityConvert = await d3.csv("data/countries_nationality.csv", d3.autoType);
 
       // This CSV has all the info about every previous circuit, some of which are not currently active but all should have data from the past [this is literally just the list of circuits, not connected w anything else]
-      const circuits = await d3.csv("data/circuits.csv", d3.autoType);
+      const circuits = await d3.csv("data/kaggle_data/circuits.csv", d3.autoType);
       console.log("circuits", circuits);
 
       // This CSV has all the info about every previous circuit, some of which are not currently active but all should have data from the past [this is literally just the list of circuits, not connected w anything else]
-      const races = await d3.csv("data/races.csv", d3.autoType);
+      const races = await d3.csv("data/kaggle_data/races.csv", d3.autoType);
       console.log("races", races);
 
-      const fastestLaps = await d3.csv("races_fastest_times.csv", d3.autoType);
+      const fastestLaps = await d3.csv("data/edited_data/races_fastest_times.csv", d3.autoType);
       console.log("fastest laps in race", fastestLaps);
 
-      // generateLineChart([])
       racesNcircuits = {}
       races.forEach(d => {
         cId = d.circuitId
@@ -360,8 +365,6 @@
       var zoom = d3.zoom()
         .scaleExtent([1, 10])
         .on("zoom", zoomTransform);
-
-
 
       function generateLineChart(dictYearLapTime) {
         document.getElementById("line-temp").textContent = "";
@@ -410,7 +413,6 @@
         var lineGen = d3.line()
           .x(d => xScaleLine(d))
           .y(d => yScaleLine(dataDict[d])+10)
-          // .curve(d3.curveMonotoneX);
 
         const line = lineChartArea.selectAll(".lineSpeed")
           .data([keys], function (d) { return d });
@@ -471,6 +473,7 @@
 
         let bisect = d3.bisector((d) => d).left;
 
+        // ***********FINISH CITATIONS - AMY*********
         activeRegion.on('mousemove', function (evt) {
           // Get mouse location
           let location = d3.pointer(evt);
@@ -493,8 +496,6 @@
 
           label.text(Math.round((d/1000)/60) + " min " + ((d/1000)%60).toFixed(2) + " sec")
             .style('fill', 'white');
-            // .attr('x', xPos +10)
-            // .attr('y', lineGraphHeight-100)
           if (xPos < lineGraphWidth / 2.0) { 
             label.attr("x",xPos+10).attr("text-anchor","start");
           }
@@ -533,41 +534,6 @@
           generateLineChart([])
         }
       }
-
-      // ****** this is where i am attempting to put images in these g tags
-      //  the g tags work but the images wont show up .. ive tried using div background-img, object element and just regular img LOL
-
-      // let circuitTags = viewport.selectAll("g.circuit")
-      //   .data(circuits)
-      //   .join("g")
-      //   .attr("class", "circuit")
-      //   .attr("transform", d => `translate(${projection([d.lng, d.lat])[0]},${projection([d.lng, d.lat])[1]})`)
-      //   .on("mouseover", function (event, d) {
-      //   d3.select(this)
-      //     .style("stroke", "white")
-      //     .style("stroke-width", "1px")
-      //   })
-      //   .on("mouseout", function (event, d) {
-      //     d3.select(this)
-      //       .style("stroke", "none")
-      //       .style("stroke-width", "0px")
-      //   })
-      //   .on("click", function (event, d) {
-      //     d3.select(this);
-      //     // console.log(this);
-      //     document.getElementById("lineBlank").textContent = `${d.name}`;
-      //     lapTimeLine(d);
-      //     populateCircuitNote(d);
-      //     populateBarChartNote(d);
-      //     generateBarChart(d);
-      //   });
-
-      // let imgTemp = circuitTags.append("img")
-      //           .attr("class", "wheel")
-      //           .attr("src", "images/pirellired.png")
-      //           .attr("width", "30px")
-      //           .attr("height", "30px");
-      // imgTemp.raise();
 
       let mapTooltip = viewport.append("g")
                              .attr("id", "mapTooltipG")
@@ -635,17 +601,11 @@
       
       function zoomTransform({ transform }) {
         viewport.attr("transform", transform.toString());
-        // zipMeshPaths.style("stroke-width", 1/transform.k)
         circuitDots.attr("r", 5/transform.k);
-        // function zoomFunc({transform}) {
-        //   viewport.attr("transform", transform.toString() )
-        //  
-        // }              
-
-        // svg.call(zoomGen);
+  
       };
       map.call(zoom);
-      zoom.scaleTo(map, 1.4); //i set an inital zoom value for it to load on but feel free to change
+      zoom.scaleTo(map, 1.4); //set initial zoom
 
       function populateCircuitNote(circuitObject) {
         let countryTemp = circuitObject.country;
