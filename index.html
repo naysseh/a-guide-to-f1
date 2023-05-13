@@ -506,7 +506,7 @@
                              .attr("id", "mapTooltipG")
                              .style("visibility", "hidden")
                              .attr("transform", `translate(10, 30)`);
-      mapTooltip.append("text")
+      let mapTooltipText = mapTooltip.append("text")
                 .attr("id", "mapTooltipText")
                 .style("font-size", "10px")
                 .style("text-align", "start")
@@ -569,6 +569,7 @@
       function zoomTransform({ transform }) {
         viewport.attr("transform", transform.toString());
         circuitDots.attr("r", 5/transform.k);
+        mapTooltipText.style("font-size", 18/transform.k);
   
       };
       map.call(zoom);
@@ -811,12 +812,20 @@
             .style("stroke-width", "1px")
           let fNameT = populateDriverNote(d)[0];
           let lNameT = populateDriverNote(d)[1];
-          tooltip.attr("transform",`translate(${yearScale(d.years) + scatterMargins.left}, ${winScale(d.wins) - 10})`)
+          if (d.years > 17) {
+            tooltip.attr("transform",`translate(${yearScale(d.years) - 50}, ${winScale(d.wins) - 10})`) 
+          } else if (d.wins > 100) {
+            tooltip.attr("transform",`translate(${yearScale(d.years) + scatterMargins.left}, ${winScale(d.wins) + 20})`) 
+          }
+          else {
+            tooltip.attr("transform",`translate(${yearScale(d.years) + scatterMargins.left}, ${winScale(d.wins) - 10})`) 
+          }
           tooltip.style("visibility", "visible")
           document.getElementById("tooltipText").textContent = `${fNameT} ${lNameT}`;
           tooltip.raise();
         })
         .on("mouseout", function (event, d) {
+          tooltip.style("visibility", "hidden")
           d3.select(this)
             .style("stroke", "none")
             .style("stroke-width", "0px");
