@@ -746,13 +746,17 @@
         var circuitDataKeys = Object.keys(circuitData);
 
         teams = []
+        count = 0;
         circuitDataKeys.forEach(d => {
           // constructorDataPoint = constructorData[d];
           // console.log(constructorDataPoint);
           // teamName = constructorDataPoint.constructorRef;
           // console.log(teamName);
           // nameArray = teamName.split("-");
-          teams.push(circuitData[d][1]);
+          if (count < 10) {
+            teams.push(circuitData[d][1]);
+          }
+          count += 1;
         });
         console.log(teams);
 
