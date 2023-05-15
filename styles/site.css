@@ -64,8 +64,9 @@ div#car-info {
   justify-content: space-between;
 }
 
-#lineBlank {
-  font-weight: bold;
+#lineBlank,
+#circuitBlank {
+  text-decoration: underline;
 }
 
 div#car-description {
