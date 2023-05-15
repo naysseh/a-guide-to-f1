@@ -13,16 +13,11 @@ function createDropLine(
   lineGraphHeight
 ) {
   activeRegion.on('mousemove', function (evt) {
-    // Get mouse location
     let location = d3.pointer(evt);
     let x = location[0];
-    // Use "invert" on a scale to go from pixels back to data
     let xYear = xScaleLine.invert(x);
-    // We use the bisector to find the index of the element that's closest to our xYear
     let index = bisect(keys, xYear);
-    // We can then get d, the data point that's closest
     let d = Number(values[index - 1]);
-    // From there, it's just a matter of updating positions using our scales like we've done for a while now
     let xPos = xScaleLine(keys[index - 1]) + 50;
     let yPos = yScaleLine(values[index - 1]) + 10;
     console.log(
